@@ -10,8 +10,10 @@ class FlatpageAdmin(admin.ModelAdmin):
     list_display = ('title', 'absolute_url')
 
     def absolute_url(self, obj):
-        url = obj.get_absolute_url()
-        return '<a href="{link}">{link}</a>'.format(link=url)
+        if obj.url:
+            url = obj.get_absolute_url()
+            return '<a href="{link}">{link}</a>'.format(link=url)
+        return ''
     absolute_url.short_description = _('Absolute URL')
     absolute_url.allow_tags = True
 
