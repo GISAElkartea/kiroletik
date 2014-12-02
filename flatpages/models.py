@@ -21,15 +21,15 @@ class Flatpage(models.Model):
         verbose_name = _('Flatpage')
         verbose_name_plural = _('Flatpages')
 
-    name = models.CharField(max_length=100, verbose_name=_('name'))
-    url = AutoSlugField(populate_from='name', unique=True,
+    title = models.CharField(max_length=100, verbose_name=_('title'))
+    url = AutoSlugField(populate_from='title', unique=True,
                         verbose_name=_('URL'))
 
     published = models.BooleanField(default=True, verbose_name=_('published'))
     content = RichTextField(verbose_name=_('content'))
 
     def __str__(self):
-        return self.name
+        return self.title
 
     def get_absolute_url(self):
         return reverse('flatpage-detail', kwargs={'slug': self.url})
