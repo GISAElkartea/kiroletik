@@ -36,6 +36,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'autoslug',
+    'ckeditor',
+
+    'flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,3 +86,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+CKEDITOR_JQUERY_URL = '/static/bower_components/jquery/dist/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Source', 'Preview'],
+            ['Format'],
+            ['BulletedList', 'NumberedList', 'Indent', 'Outdent'],
+            ['Image', 'Link', 'Unlink', 'Anchor', 'Table'],
+        ],
+        'format_tags': 'h2;h3;h4;div;p',
+    },
+}
