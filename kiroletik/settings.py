@@ -37,11 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'adminsortable',
     'autoslug',
     'ckeditor',
 
     'flatpages',
     'banners',
+    'widgets',
 )
 
 MIDDLEWARE_CLASSES = (

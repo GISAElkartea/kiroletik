@@ -21,6 +21,12 @@
       </ul>
     </nav>
 
+    <aside>
+      {% for widget in widgets %}
+      {{ widget.content|safe }}
+      {% endfor %}
+    </aside>
+
     <main>
       {% block content %}
       {% endblock content %}

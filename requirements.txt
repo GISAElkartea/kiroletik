@@ -1,4 +1,6 @@
 django==1.7
 django-autoslug
 django-ckeditor
+django-positions
+django-admin-sortable2
 Pillow
