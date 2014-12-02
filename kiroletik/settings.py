@@ -91,6 +91,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'kiroletik/static/')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+TEMPLATE_DIRS = ['kiroletik/templates']
+
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 CKEDITOR_JQUERY_URL = '/static/bower_components/jquery/dist/jquery.min.js'
 CKEDITOR_CONFIGS = {
