@@ -6,7 +6,7 @@ from .models import Flatpage
 
 class FlatpageAdmin(admin.ModelAdmin):
     readonly_fields = ('absolute_url',)
-    fields = ('published', ('name', 'absolute_url'), 'content')
+    fields = ('published', ('title', 'absolute_url'), 'content')
     list_display = ('title', 'absolute_url')
 
     def absolute_url(self, obj):
