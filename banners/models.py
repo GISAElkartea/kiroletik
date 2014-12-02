@@ -4,7 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 class BannerQuerySet(models.QuerySet):
     def active(self):
-        return self.get(active=True)
+        try:
+            return self.get(active=True)
+        except Banner.DoesNotExist:
+            return None
 
 
 class Banner(models.Model):
