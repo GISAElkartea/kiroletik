@@ -3,4 +3,6 @@ django-autoslug
 django-ckeditor
 django-positions
 django-admin-sortable2
+django_compressor
+django-libsass
 Pillow

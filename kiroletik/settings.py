@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'adminsortable',
     'autoslug',
     'ckeditor',
+    'compressor',
 
     'flatpages',
     'banners',
@@ -89,7 +90,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'kiroletik/compiled_static/')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'kiroletik/static/')]
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', 'django_libsass.SassCompiler'),
+)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
