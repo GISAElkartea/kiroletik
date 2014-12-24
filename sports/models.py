@@ -104,8 +104,10 @@ class MatchResult(models.Model):
         verbose_name = _('Match result')
         verbose_name_plural = _('Match results')
 
-    team_foo = models.ForeignKey(Team, verbose_name=_('First team'))
-    team_bar = models.ForeignKey(Team, verbose_name=_('Second team'))
+    team_foo = models.ForeignKey(Team, related_name='+',
+                                 verbose_name=_('First team'))
+    team_bar = models.ForeignKey(Team, related_name='+',
+                                 verbose_name=_('Second team'))
     foo_points = models.PositiveIntegerField(
         verbose_name=_('Points for first team'))
     bar_points = models.PositiveIntegerField(
