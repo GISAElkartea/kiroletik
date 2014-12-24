@@ -44,6 +44,7 @@ INSTALLED_APPS = (
 
     'flatpages',
     'banners',
+    'sports',
     'widgets',
 )
 
