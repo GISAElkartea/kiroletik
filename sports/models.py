@@ -88,6 +88,7 @@ class Team(models.Model):
 class TeamClassification(models.Model):
     class Meta:
         ordering = ['-points']
+        unique_together = ('team', 'season')
         verbose_name = _('Team classification')
         verbose_name_plural = _('Team classifications')
 
