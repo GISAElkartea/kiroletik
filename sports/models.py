@@ -118,7 +118,7 @@ class MatchResult(models.Model):
 
     def __str__(self):
         return ('{s.team_foo}: {s.foo_points} - '
-                '{s.team_bar} {s.bar_points}').format(s=self)
+                '{s.team_bar}: {s.bar_points}').format(s=self)
 
 
 class News(models.Model):
