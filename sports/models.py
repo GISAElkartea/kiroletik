@@ -87,7 +87,7 @@ class Team(models.Model):
 
 class TeamClassification(models.Model):
     class Meta:
-        ordering = ['points']
+        ordering = ['-points']
         verbose_name = _('Team classification')
         verbose_name_plural = _('Team classifications')
 
