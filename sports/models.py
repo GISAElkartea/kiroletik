@@ -142,3 +142,7 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def is_published(self):
+        return now() > self.published
