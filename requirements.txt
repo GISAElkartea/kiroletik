@@ -5,4 +5,5 @@ django-positions
 django-admin-sortable2
 django_compressor
 django-libsass
+pytz
 Pillow
