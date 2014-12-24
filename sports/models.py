@@ -126,7 +126,7 @@ class News(models.Model):
         verbose_name = _('News')
         verbose_name_plural = _('News')
 
-    published = models.DateTimeField(default=now())
+    published = models.DateTimeField(default=now)
     sport = models.ForeignKey(Sport, null=True, blank=True,
                               verbose_name=_('sport'))
     match = models.ForeignKey(MatchResult, null=True, blank=True,
