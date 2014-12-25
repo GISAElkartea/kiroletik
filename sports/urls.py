@@ -10,11 +10,11 @@ slug = r'(?P<slug>(\w|-)+)'
 urlpatterns = patterns(
     'sports.views',
 
-    url(r'^news/$',
+    url(r'^$',
         'news_list',
         name='news-list'),
 
-    url(r'^news/{}/{}/{}/{}$'.format(year, month, day, slug),
+    url(r'^{}/{}/{}/{}$'.format(year, month, day, slug),
         'news_detail',
         name='news-detail'),
 
