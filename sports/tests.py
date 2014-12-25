@@ -6,7 +6,7 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport, MatchResult
+from .models import News, Sport, MatchResult, Season
 
 
 class NewsListTestCase(TestCase):
@@ -133,3 +133,18 @@ class MatchListTestCase(TestCase):
         self.assertEqual(page.paginator.num_pages, 2)
         self.assertTrue(page.has_next())
         self.assertEqual(page.next_page_number(), 2)
+
+
+class SeasonDetailTestCase(TestCase):
+    def setUp(self):
+        self.season = mommy.make(Season)
+        self.url = self.season.get_absolute_url()
+
+    def test_ok(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_context(self):
+        ctx = self.client.get(self.url).context
+        self.assertIn('season', ctx)
+        self.assertEqual(ctx['season'], self.season)
