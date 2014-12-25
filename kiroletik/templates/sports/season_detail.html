@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ season }}{% endblock title %}
+
+{% block content %}
+<h2>{{ season.competition }}</h2>
+<h3>{{ season }}</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>{% trans 'Position' %}</th>
+      <th>{% trans 'Team' %}</th>
+      <th>{% trans 'Points' %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for team_classification in season.teamclassification_set.select_related %}
+    <tr>
+      <th>{{ forloop.counter }}</th>
+      <th>{{ team_classification.team }}</th>
+      <th>{{ team_classification.points }}</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% for match_result in season.matchresult_set.select_related %}
+{{ match_result }}
+{% endfor %}
+
+{% endblock content %}
