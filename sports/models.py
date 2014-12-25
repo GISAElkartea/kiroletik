@@ -121,6 +121,8 @@ class TeamClassification(models.Model):
 
 class MatchResult(models.Model):
     class Meta:
+        unique_together = ('team_foo', 'team_bar', 'date')
+        ordering = ('-date',)
         verbose_name = _('Match result')
         verbose_name_plural = _('Match results')
 
@@ -132,6 +134,8 @@ class MatchResult(models.Model):
         verbose_name=_('Points for first team'))
     bar_points = models.PositiveIntegerField(
         verbose_name=_('Points for second team'))
+
+    date = models.DateField(verbose_name=_('date'))
     season = models.ForeignKey(Season, blank=True, null=True,
                                verbose_name=_('season'))
 

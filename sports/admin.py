@@ -42,9 +42,11 @@ admin.site.register(Team, TeamAdmin)
 
 
 class MatchResultAdmin(admin.ModelAdmin):
-    fields = ('season', ('team_foo', 'foo_points'), ('team_bar', 'bar_points'))
-    list_display = ('__str__', 'season')
-    list_filter = ('season',)
+    fields = (('date', 'season'), ('team_foo', 'foo_points'),
+              ('team_bar', 'bar_points'))
+    list_display = ('__str__', 'date', 'season')
+    list_filter = ('season', 'date')
+    date_hierarchy = 'date'
 admin.site.register(MatchResult, MatchResultAdmin)
 
 

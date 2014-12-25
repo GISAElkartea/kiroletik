@@ -117,7 +117,7 @@ class MatchListTestCase(TestCase):
         self.assertIn('matches', response.context)
 
     def test_order(self):
-        matches = list(MatchResult.objects.all()[:10])
+        matches = list(MatchResult.objects.order_by('-date')[:10])
         ctx = self.client.get(self.url).context
         self.assertEqual(list(ctx['matches']), matches)
 
