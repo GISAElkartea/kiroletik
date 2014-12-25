@@ -1,9 +1,1 @@
-django==1.7
-django-autoslug
-django-ckeditor
-django-positions
-django-admin-sortable2
-django_compressor
-django-libsass
-pytz
-Pillow
+-r requirements/base.txt
