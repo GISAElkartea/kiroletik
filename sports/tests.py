@@ -6,7 +6,7 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News
+from .models import News, Sport
 
 
 class NewsListTestCase(TestCase):
@@ -82,3 +82,16 @@ class NewsDetailTestCase(TestCase):
         self.assertEqual(ctx['news'], self.past_news)
 
 
+class SportDetailTestCase(TestCase):
+    def setUp(self):
+        self.sport = mommy.make(Sport)
+        self.url = self.sport.get_absolute_url()
+
+    def test_ok(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_context(self):
+        ctx = self.client.get(self.url).context
+        self.assertIn('sport', ctx)
+        self.assertEqual(ctx['sport'], self.sport)
