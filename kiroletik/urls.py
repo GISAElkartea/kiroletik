@@ -6,6 +6,7 @@ from django.contrib import admin
 
 urlpatterns = patterns(
     '',
+    url(r'^', include('sports.urls')),
     url(r'^flatpages/', include('flatpages.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
