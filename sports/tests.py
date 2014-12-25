@@ -57,5 +57,28 @@ class NewsListTestCase(TestCase):
         self.assertTrue(page.has_next())
         self.assertEqual(page.next_page_number(), 2)
 
-    def test_only_past_news(self):
-        pass
+
+class NewsDetailTestCase(TestCase):
+    def setUp(self):
+        past_date = now()
+        future_date = now() + timedelta(days=1)
+        self.past_news = mommy.make(News, published=past_date)
+        self.future_news = mommy.make(News, published=future_date)
+
+    def test_past_ok(self):
+        url = self.past_news.get_absolute_url()
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_future_not_found(self):
+        url = self.future_news.get_absolute_url()
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
+
+    def test_news_in_context(self):
+        url = self.past_news.get_absolute_url()
+        ctx = self.client.get(url).context
+        self.assertIn('news', ctx)
+        self.assertEqual(ctx['news'], self.past_news)
+
+
