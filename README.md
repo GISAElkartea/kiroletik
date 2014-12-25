@@ -16,6 +16,12 @@ Install
     python manage.py createsuperuser
 
 
+Test
+====
+
+python manage.py test
+
+
 Run
 ===
 
