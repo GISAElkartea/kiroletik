@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ sport }}{% endblock title %}
+
+{% block content %}
+<h2>{{ sport }}</h2>
+
+{% for news in sport.news_set.select_related %}
+<a href="{{ news.get_absolute_url }}">{{ news }}</a>
+{% endfor %}
+
+{% for competition in sport.competition_set.select_related %}
+<a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
+
+{% for season in competition.season_set.select_related %}
+<a href="{{ season.get_absolute_url }}">{{ season }}</a>
+{% endfor %}
+{% endfor %}
+{% endblock content %}
