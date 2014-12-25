@@ -6,7 +6,7 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport
+from .models import News, Sport, MatchResult
 
 
 class NewsListTestCase(TestCase):
@@ -95,3 +95,41 @@ class SportDetailTestCase(TestCase):
         ctx = self.client.get(self.url).context
         self.assertIn('sport', ctx)
         self.assertEqual(ctx['sport'], self.sport)
+
+
+class MatchListTestCase(TestCase):
+    def setUp(self):
+        self.matches = mommy.make(MatchResult, _quantity=20)
+        self.url = reverse('match-list')
+
+    def test_ok(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_empty(self):
+        for match in self.matches:
+            match.delete()
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_context(self):
+        response = self.client.get(self.url)
+        self.assertIn('matches', response.context)
+
+    def test_order(self):
+        matches = list(MatchResult.objects.all()[:10])
+        ctx = self.client.get(self.url).context
+        self.assertEqual(list(ctx['matches']), matches)
+
+    def test_paginated(self):
+        ctx = self.client.get(self.url).context
+        self.assertTrue(ctx['is_paginated'])
+        self.assertEqual(len(ctx['matches']), 10)
+
+    def test_pagination(self):
+        page = self.client.get(self.url).context['page_obj']
+        self.assertFalse(page.has_previous())
+        self.assertEqual(page.number, 1)
+        self.assertEqual(page.paginator.num_pages, 2)
+        self.assertTrue(page.has_next())
+        self.assertEqual(page.next_page_number(), 2)
