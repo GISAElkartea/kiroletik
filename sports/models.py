@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.timezone import now
 from django.utils.translation import ugettext as _
 
@@ -19,6 +20,9 @@ class Sport(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('sport-detail', kwargs={'slug': self.slug})
 
 
 class Town(models.Model):
@@ -60,6 +64,12 @@ class Season(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+    def get_absolute_url(self):
+        return reverse('season-detail', kwargs={
+            'year': self.date.year,
+            'month': self.date.month,
+            'day': self.date.day})
 
 
 class Team(models.Model):
@@ -156,3 +166,10 @@ class News(models.Model):
     @property
     def is_published(self):
         return now() > self.published
+
+    def get_absolute_url(self):
+        return reverse('news-detail', kwargs={
+            'year': self.published.year,
+            'month': self.published.month,
+            'day': self.published.day,
+            'slug': self.slug})
