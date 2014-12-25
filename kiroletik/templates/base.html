@@ -1,4 +1,4 @@
-{% load compress %}
+{% load i18n compress %}
 <!doctype html>
 
 <html lang="en">
@@ -19,6 +19,10 @@
 
     <nav>
       <ul>
+        <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
+        {% for sport in sports %}
+        <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
+        {% endfor %}
         {% for flatpage in flatpages %}
         <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
         {% endfor %}
