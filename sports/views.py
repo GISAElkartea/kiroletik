@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.dates import ArchiveIndexView, DateDetailView
+from django.views.generic.dates import YearMixin, MonthMixin, DayMixin
 
 from .models import News, Sport, MatchResult, Season
 
@@ -36,12 +37,17 @@ class MatchList(ListView):
     template_name = 'sports/match_list.html'
 
 
-class SeasonDetail(DateDetailView):
+class SeasonDetail(DetailView, YearMixin, MonthMixin, DayMixin):
     model = Season
-    date_field = 'date'
+    slug_field = 'competition__slug'
     month_format = '%m'
     context_object_name = 'season'
     template_name = 'sports/season_detail.html'
+
+    def get_queryset(self):
+        return Season.objects.filter(date__year=self.get_year(),
+                                     date__month=self.get_month(),
+                                     date__day=self.get_day())
 
 
 news_list = NewsList.as_view()

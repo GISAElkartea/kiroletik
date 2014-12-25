@@ -26,7 +26,7 @@ urlpatterns = patterns(
         'match_list',
         name='match-list'),
 
-    url(r'^season/{}/{}/{}/$'.format(year, month, day),
+    url(r'^{}/season/{}/{}/{}/$'.format(slug, year, month, day),
         'season_detail',
         name='season-detail'),
 )

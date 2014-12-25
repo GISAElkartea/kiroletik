@@ -68,6 +68,7 @@ class Season(models.Model):
 
     def get_absolute_url(self):
         return reverse('season-detail', kwargs={
+            'slug': self.competition.slug,
             'year': self.date.year,
             'month': self.date.month,
             'day': self.date.day})
