@@ -15,6 +15,7 @@ class NewsMixin(object):
 
 
 class NewsList(NewsMixin, ArchiveIndexView):
+    paginate_by = 10
     context_object_name = 'news_list'
     template_name = 'sports/news_list.html'
 
