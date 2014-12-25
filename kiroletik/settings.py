@@ -129,3 +129,7 @@ CKEDITOR_CONFIGS = {
         'format_tags': 'h2;h3;h4;div;p',
     },
 }
+
+MOMMY_CUSTOM_FIELDS_GEN = {
+    'autoslug.fields.AutoSlugField': lambda: 'some-slug',
+    }

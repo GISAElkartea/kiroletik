@@ -1,0 +1,3 @@
+-r requirements.txt
+
+model_mommy
