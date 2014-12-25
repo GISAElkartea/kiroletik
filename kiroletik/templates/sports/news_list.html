@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Latest News' %}{% endblock title %}
+
+{% block content %}
+{% for news in news_list %}
+<a href="{{ news.get_absolute_url }}">{{ news }}</a>
+{% endfor %}
+{% endblock content %}
