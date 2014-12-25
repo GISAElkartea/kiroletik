@@ -142,17 +142,17 @@ class MatchResult(models.Model):
 
 class NewsQuerySet(models.QuerySet):
     def published(self):
-        self.filter(published__lte=now())
+        return self.filter(published__lte=now())
 
     def unpublished(self):
-        self.filter(published__gt=now())
+        return self.filter(published__gt=now())
 
 
 class News(models.Model):
     objects = NewsQuerySet.as_manager()
 
     class Meta:
-        ordering = ['-published']
+        ordering = ['-published', 'pk']
         verbose_name = _('News')
         verbose_name_plural = _('News')
 
