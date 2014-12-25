@@ -34,6 +34,7 @@ class SportDetail(DetailView):
 class MatchList(ListView):
     model = MatchResult
     allow_empty = True
+    paginate_by = 10
     context_object_name = 'matches'
     template_name = 'sports/match_list.html'
 
