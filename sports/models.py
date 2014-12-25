@@ -51,9 +51,16 @@ class Competition(models.Model):
     def __str__(self):
         return self.name
 
+    def get_latest_season(self):
+        return self.season_set.latest('date')
+
+    def get_absolute_url(self):
+        return self.get_latest_season().get_absolute_url()
+
 
 class Season(models.Model):
     class Meta:
+        ordering = ['-date']
         unique_together = ('competition', 'date')
         verbose_name = _('Season')
         verbose_name_plural = _('Seasons')
