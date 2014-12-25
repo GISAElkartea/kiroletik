@@ -54,6 +54,7 @@ class Competition(models.Model):
 
 class Season(models.Model):
     class Meta:
+        unique_together = ('competition', 'date')
         verbose_name = _('Season')
         verbose_name_plural = _('Seasons')
 
