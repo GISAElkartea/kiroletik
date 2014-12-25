@@ -121,7 +121,17 @@ class MatchResult(models.Model):
                 '{s.team_bar}: {s.bar_points}').format(s=self)
 
 
+class NewsQuerySet(models.QuerySet):
+    def published(self):
+        self.filter(published__lte=now())
+
+    def unpublished(self):
+        self.filter(published__gt=now())
+
+
 class News(models.Model):
+    objects = NewsQuerySet.as_manager()
+
     class Meta:
         ordering = ['-published']
         verbose_name = _('News')
