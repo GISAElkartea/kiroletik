@@ -7,9 +7,10 @@ from .models import News, Sport, MatchResult, Season
 
 class NewsMixin(object):
     model = News
-    date_field = 'published'
     allow_empty = True
+    date_field = 'published'
     allow_future = False
+    month_format = '%m'
 
 
 class NewsList(NewsMixin, ArchiveIndexView):
@@ -38,6 +39,7 @@ class MatchList(ListView):
 class SeasonDetail(DateDetailView):
     model = Season
     date_field = 'date'
+    month_format = '%m'
     context_object_name = 'season'
     template_name = 'sports/season_detail.html'
 
