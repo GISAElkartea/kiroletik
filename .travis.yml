@@ -1,3 +1,4 @@
+language: python
 python: 2.7
-install: pip install -r requirements/dev.txt
-script: python manage.py text
+install: "pip install -r requirements/dev.txt"
+script: "python manage.py text"
