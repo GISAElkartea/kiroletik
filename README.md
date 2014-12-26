@@ -19,13 +19,21 @@ Install
 Test
 ====
 
-python manage.py test
+    python manage.py test
 
 
 Run
 ===
 
     python manage.py runserver
+
+
+Push to heroku
+==============
+
+    # After setting up the heroku credentials with
+    # heroku login
+    git push heroku master
 
 
 Required views
