@@ -7,7 +7,16 @@ from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
 
 
+class SportManager(models.Manager):
+    def get_queryset(self, *args, **kwargs):
+        qs = super(SportManager, self).get_queryset(*args, **kwargs)
+        qs = qs.annotate(news_amount=models.Count('news'))
+        return qs.order_by('-news_amount')
+
+
 class Sport(models.Model):
+    objects = SportManager()
+
     class Meta:
         verbose_name = _('Sport')
         verbose_name_plural = _('Sports')
