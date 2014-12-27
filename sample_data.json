@@ -779,7 +779,7 @@
 {
     "fields": {
         "active": true,
-        "position": -2,
+        "position": 1,
         "content": "<p><a href=\"https://twitter.com/Kiroletik_bloga\">Twitterren bitarteko albisteak</a></p>\r\n",
         "name": "Twitterreko feeda"
     },
