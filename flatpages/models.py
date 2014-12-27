@@ -28,7 +28,7 @@ class Flatpage(models.Model):
     published = models.BooleanField(default=True, verbose_name=_('published'))
     content = RichTextField(verbose_name=_('content'))
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):

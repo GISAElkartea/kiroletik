@@ -18,7 +18,7 @@ class Sport(models.Model):
 
     slug = AutoSlugField(populate_from='name', unique=True, editable=False)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -32,7 +32,7 @@ class Town(models.Model):
 
     name = models.CharField(max_length=50, unique=True, verbose_name=_('town'))
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -48,7 +48,7 @@ class Competition(models.Model):
 
     slug = AutoSlugField(populate_from='name', unique=True, editable=False)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def get_latest_season(self):
@@ -70,7 +70,7 @@ class Season(models.Model):
     name = models.CharField(max_length=150, blank=True,
                             verbose_name=_('name'))
 
-    def __str__(self):
+    def __unicode__(self):
         return str(self.date)
 
     def get_absolute_url(self):
@@ -96,7 +96,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to='images/teams', blank=True,
                               verbose_name=_('image'))
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     @property
@@ -115,7 +115,7 @@ class TeamClassification(models.Model):
     season = models.ForeignKey(Season, verbose_name=_('season'))
     points = models.PositiveIntegerField(verbose_name=_('points'))
 
-    def __str__(self):
+    def __unicode__(self):
         return '{s.team} {s.points} points at {s.season}'.format(s=self)
 
 
@@ -139,7 +139,7 @@ class MatchResult(models.Model):
     season = models.ForeignKey(Season, blank=True, null=True,
                                verbose_name=_('season'))
 
-    def __str__(self):
+    def __unicode__(self):
         return ('{s.team_foo}: {s.foo_points} - '
                 '{s.team_bar}: {s.bar_points}').format(s=self)
 
@@ -173,7 +173,7 @@ class News(models.Model):
 
     slug = AutoSlugField(populate_from='title', unique=True, editable=False)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     @property
