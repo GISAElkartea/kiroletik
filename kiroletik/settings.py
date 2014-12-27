@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -113,6 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',
     'kiroletik.context_processors.main_processor',
 )
 
@@ -132,6 +134,8 @@ CKEDITOR_CONFIGS = {
         'format_tags': 'h2;h3;h4;div;p',
     },
 }
+
+GRAPPELLI_ADMIN_TITLE = 'Kiroletik'
 
 MOMMY_CUSTOM_FIELDS_GEN = {
     'autoslug.fields.AutoSlugField': lambda: 'some-slug',
