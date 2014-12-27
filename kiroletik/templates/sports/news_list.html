@@ -7,13 +7,7 @@
 
 {% if sport %}
 <h2>{{ sport }}</h2>
-{% endif %}
 
-{% for news in news_list %}
-<a href="{{ news.get_absolute_url }}">{{ news }}</a>
-{% endfor %}
-
-{% if sport %}
 {% for competition in sport.competition_set.select_related %}
 <a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
 
@@ -22,5 +16,11 @@
 {% endfor %}
 {% endfor %}
 {% endif %}
+
+{% for news in news_list %}
+<a href="{{ news.get_absolute_url }}">{{ news }}</a>
+{% endfor %}
+
+{% include 'pagination.html' with page_obj=page_obj only %}
 
 {% endblock content %}

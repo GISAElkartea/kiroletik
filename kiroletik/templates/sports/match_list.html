@@ -7,4 +7,7 @@
 {% for match in matches %}
 {{ match }}
 {% endfor %}
+
+{% include 'pagination.html' with page_obj=page_obj only %}
+
 {% endblock content %}
