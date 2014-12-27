@@ -122,8 +122,11 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
             ['Source', 'Preview'],
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
+             'Superscript', '-', 'RemoveFormat'],
             ['Format'],
-            ['BulletedList', 'NumberedList', 'Indent', 'Outdent'],
+            ['BulletedList', 'NumberedList', 'Indent', 'Outdent', '-',
+             'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Image', 'Link', 'Unlink', 'Anchor', 'Table'],
         ],
         'format_tags': 'h2;h3;h4;div;p',
