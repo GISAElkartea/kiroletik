@@ -2,7 +2,7 @@ Install
 =======
 
     # Python requirements
-    pip install -r requirements.txt
+    pip install -r requirements/base.txt
 
     # JS requirements
     cd kiroletik/static/
@@ -21,6 +21,7 @@ Test
 
 [![Build Status](https://travis-ci.org/GISAElkartea/kiroletik.svg?branch=master)](https://travis-ci.org/GISAElkartea/kiroletik)
 
+    pip install -r requirements/dev.txt
     python manage.py test
 
 
@@ -33,6 +34,7 @@ Run
 Push to heroku
 ==============
 
+    pip install -r requirements/heroku.txt
     # After setting up the heroku credentials with
     # heroku login
     git push heroku master
