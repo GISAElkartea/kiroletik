@@ -58,6 +58,31 @@ class NewsListTestCase(TestCase):
         self.assertEqual(page.next_page_number(), 2)
 
 
+class SportNewsList(NewsListTestCase):
+    def setUp(self):
+        self.sport = mommy.make(Sport)
+        past_date = now()
+        future_date = now() + timedelta(days=1)
+        self.past_news = mommy.make(News, published=past_date, sport=self.sport,
+                                    _quantity=20)
+        self.future_news = mommy.make(News, published=future_date,
+                                      sport=self.sport, _quantity=5)
+        self.url = self.sport.get_absolute_url()
+
+    def test_context(self):
+        ctx = self.client.get(self.url).context
+        self.assertIn('sport', ctx)
+        self.assertEqual(ctx['sport'], self.sport)
+        self.assertIn('news_list', ctx)
+
+    def test_order(self):
+        alpha = mommy.make(News, sport=self.sport)
+        beta = mommy.make(News, sport=self.sport)
+        gamma = mommy.make(News, sport=self.sport)
+        ctx = self.client.get(self.url).context
+        self.assertEqual(ctx['news_list'][:3], [gamma, beta, alpha])
+
+
 class NewsDetailTestCase(TestCase):
     def setUp(self):
         past_date = now()
@@ -80,21 +105,6 @@ class NewsDetailTestCase(TestCase):
         ctx = self.client.get(url).context
         self.assertIn('news', ctx)
         self.assertEqual(ctx['news'], self.past_news)
-
-
-class SportDetailTestCase(TestCase):
-    def setUp(self):
-        self.sport = mommy.make(Sport)
-        self.url = self.sport.get_absolute_url()
-
-    def test_ok(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
-
-    def test_context(self):
-        ctx = self.client.get(self.url).context
-        self.assertIn('sport', ctx)
-        self.assertEqual(ctx['sport'], self.sport)
 
 
 class MatchListTestCase(TestCase):

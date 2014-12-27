@@ -31,7 +31,7 @@ class Sport(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('sport-detail', kwargs={'slug': self.slug})
+        return reverse('sport-news-list', kwargs={'slug': self.slug})
 
 
 class Town(models.Model):

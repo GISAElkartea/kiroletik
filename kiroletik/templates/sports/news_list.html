@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'Latest News' %}{% endblock title %}
+{% block title %}{% if sport %}{{ sport }}{% else %}{% trans 'Latest News' %}{% endif %}{% endblock title %}
 
 {% block content %}
+
+{% if sport %}
+<h2>{{ sport }}</h2>
+{% endif %}
+
 {% for news in news_list %}
 <a href="{{ news.get_absolute_url }}">{{ news }}</a>
 {% endfor %}
+
+{% if sport %}
+{% for competition in sport.competition_set.select_related %}
+<a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
+
+{% for season in competition.season_set.select_related %}
+<a href="{{ season.get_absolute_url }}">{{ season }}</a>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
 {% endblock content %}

@@ -14,13 +14,13 @@ urlpatterns = patterns(
         'news_list',
         name='news-list'),
 
+    url(r'^sport/{}/$'.format(slug),
+        'sport_news_list',
+        name='sport-news-list'),
+
     url(r'^{}/{}/{}/{}$'.format(year, month, day, slug),
         'news_detail',
         name='news-detail'),
-
-    url(r'^sport/{}/$'.format(slug),
-        'sport_detail',
-        name='sport-detail'),
 
     url(r'^matches/$',
         'match_list',

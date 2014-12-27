@@ -2,6 +2,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.dates import ArchiveIndexView, DateDetailView
 from django.views.generic.dates import YearMixin, MonthMixin, DayMixin
+from django.shortcuts import get_object_or_404
 
 from .models import News, Sport, MatchResult, Season
 
@@ -20,15 +21,21 @@ class NewsList(NewsMixin, ArchiveIndexView):
     template_name = 'sports/news_list.html'
 
 
+class SportNewsList(NewsList):
+    def get_queryset(self):
+        self.sport = get_object_or_404(Sport, slug=self.kwargs['slug'])
+        qs = super(SportNewsList, self).get_queryset()
+        return qs.filter(sport=self.sport)
+
+    def get_context_data(self, *args, **kwargs):
+        ctx = super(SportNewsList, self).get_context_data(*args, **kwargs)
+        ctx['sport'] = self.sport
+        return ctx
+
+
 class NewsDetail(NewsMixin, DateDetailView):
     context_object_name = 'news'
     template_name = 'sports/news_detail.html'
-
-
-class SportDetail(DetailView):
-    model = Sport
-    context_object_name = 'sport'
-    template_name = 'sports/sport_detail.html'
 
 
 class MatchList(ListView):
@@ -53,7 +60,7 @@ class SeasonDetail(DetailView, YearMixin, MonthMixin, DayMixin):
 
 
 news_list = NewsList.as_view()
+sport_news_list = SportNewsList.as_view()
 news_detail = NewsDetail.as_view()
-sport_detail = SportDetail.as_view()
 match_list = MatchList.as_view()
 season_detail = SeasonDetail.as_view()
