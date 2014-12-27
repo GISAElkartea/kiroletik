@@ -1,0 +1,1890 @@
+[
+{
+    "fields": {
+        "model": "logentry",
+        "name": "log entry",
+        "app_label": "admin"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "model": "permission",
+        "name": "permission",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 2
+},
+{
+    "fields": {
+        "model": "group",
+        "name": "group",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 3
+},
+{
+    "fields": {
+        "model": "user",
+        "name": "user",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 4
+},
+{
+    "fields": {
+        "model": "contenttype",
+        "name": "content type",
+        "app_label": "contenttypes"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 5
+},
+{
+    "fields": {
+        "model": "session",
+        "name": "session",
+        "app_label": "sessions"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 6
+},
+{
+    "fields": {
+        "model": "flatpage",
+        "name": "Flatpage",
+        "app_label": "flatpages"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 7
+},
+{
+    "fields": {
+        "model": "banner",
+        "name": "Banner",
+        "app_label": "banners"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 8
+},
+{
+    "fields": {
+        "model": "sport",
+        "name": "Sport",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 9
+},
+{
+    "fields": {
+        "model": "town",
+        "name": "Town",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 10
+},
+{
+    "fields": {
+        "model": "competition",
+        "name": "Competition",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 11
+},
+{
+    "fields": {
+        "model": "season",
+        "name": "Season",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 12
+},
+{
+    "fields": {
+        "model": "team",
+        "name": "Team",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 13
+},
+{
+    "fields": {
+        "model": "teamclassification",
+        "name": "Team classification",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 14
+},
+{
+    "fields": {
+        "model": "matchresult",
+        "name": "Match result",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 15
+},
+{
+    "fields": {
+        "model": "news",
+        "name": "News",
+        "app_label": "sports"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 16
+},
+{
+    "fields": {
+        "model": "widget",
+        "name": "Widget",
+        "app_label": "widgets"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 17
+},
+{
+    "fields": {
+        "expire_date": "2015-01-10T20:03:35.267Z",
+        "session_data": "MWNjYjBiNmYyZmJiYzA1MTUxNDIxZjI5YWIyZjY2MDY1Y2QxMTc5Zjp7Il9hdXRoX3VzZXJfaGFzaCI6ImVhMWI4Njk4ZDlhZjYzMTVjZmI5MzQ1ZjhlYjM1NzkyYzEwM2ZkMTciLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "6aygljp5uvnd359v55g5xbtfdplyfojg"
+},
+{
+    "fields": {
+        "url": "gure-inguruan",
+        "content": "<p>Kiroletik Behe Bidasoa eskualdeko kirolaren inguruan informazioa euskaraz jasotzen duen ataria da.</p>\r\n\r\n<h2>\u200bKontaktua</h2>\r\n\r\n<p>\u200bEposta: oiartzun92@gmail.com</p>\r\n\r\n<p>\u200b</p>\r\n",
+        "published": true,
+        "title": "Gure Inguruan"
+    },
+    "model": "flatpages.flatpage",
+    "pk": 1
+},
+{
+    "fields": {
+        "active": true,
+        "image": "banners/goiburua3_zps231ad6dd.jpgoriginal.jpeg",
+        "name": "Goiburu zaharra"
+    },
+    "model": "banners.banner",
+    "pk": 1
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Eskubaloia",
+        "slug": "eskubaloia"
+    },
+    "model": "sports.sport",
+    "pk": 1
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Futbola",
+        "slug": "futbola"
+    },
+    "model": "sports.sport",
+    "pk": 2
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Arrauna",
+        "slug": "arrauna"
+    },
+    "model": "sports.sport",
+    "pk": 3
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Errugbia",
+        "slug": "errugbia"
+    },
+    "model": "sports.sport",
+    "pk": 4
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Mahai tenisa",
+        "slug": "mahai-tenisa"
+    },
+    "model": "sports.sport",
+    "pk": 5
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Saskibaloia",
+        "slug": "saskibaloia"
+    },
+    "model": "sports.sport",
+    "pk": 6
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Trialsina",
+        "slug": "trialsina"
+    },
+    "model": "sports.sport",
+    "pk": 7
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Triatloia",
+        "slug": "triatloia"
+    },
+    "model": "sports.sport",
+    "pk": 8
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Atletismoa",
+        "slug": "atletismoa"
+    },
+    "model": "sports.sport",
+    "pk": 9
+},
+{
+    "fields": {
+        "image": "",
+        "name": "Automobilismoa",
+        "slug": "automobilismoa"
+    },
+    "model": "sports.sport",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "Irun"
+    },
+    "model": "sports.town",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Hondarribia"
+    },
+    "model": "sports.town",
+    "pk": 2
+},
+{
+    "fields": {
+        "slug": "hirugarren-mailako-liga",
+        "sport": 2,
+        "name": "Hirugarren Mailako Liga",
+        "description": ""
+    },
+    "model": "sports.competition",
+    "pk": 1
+},
+{
+    "fields": {
+        "slug": "ohorezko-erregionala",
+        "sport": 2,
+        "name": "Ohorezko Erregionala",
+        "description": ""
+    },
+    "model": "sports.competition",
+    "pk": 2
+},
+{
+    "fields": {
+        "date": "2014-10-09",
+        "name": "",
+        "competition": 1
+    },
+    "model": "sports.season",
+    "pk": 1
+},
+{
+    "fields": {
+        "date": "2014-10-06",
+        "name": "",
+        "competition": 2
+    },
+    "model": "sports.season",
+    "pk": 2
+},
+{
+    "fields": {
+        "town": 1,
+        "image": "",
+        "sport": 2,
+        "name": "Real Union",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 1
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "Aurrera",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 2
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ARETXABALETA K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 3
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "AURRERA K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 4
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ORDIZIA K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 5
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "TOLOSA C.F. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 6
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "HERNANI C.D.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 7
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "MARTUTENE K.E.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 8
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ELGOIBAR C.D.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 9
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ANAITASUNA C.D",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 10
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ZARAUTZ K.E.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 11
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "OSTADAR S.K.T.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 12
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "USURBIL F.T. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 13
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "BETI GAZTE K.J.K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 14
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "BERGARA K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 15
+},
+{
+    "fields": {
+        "town": 1,
+        "image": "",
+        "sport": 2,
+        "name": "REAL UNION CLUB SAD",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 16
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ALO\u00d1A MENDI KE ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 17
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "TOURING C.D.",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 18
+},
+{
+    "fields": {
+        "town": null,
+        "image": "",
+        "sport": 2,
+        "name": "ANTZUOLA K.E. ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 19
+},
+{
+    "fields": {
+        "town": 2,
+        "image": "",
+        "sport": 2,
+        "name": "HONDARRIBIA F.E ",
+        "description": ""
+    },
+    "model": "sports.team",
+    "pk": 20
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 12,
+        "team": 3
+    },
+    "model": "sports.teamclassification",
+    "pk": 1
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 9,
+        "team": 4
+    },
+    "model": "sports.teamclassification",
+    "pk": 2
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 9,
+        "team": 5
+    },
+    "model": "sports.teamclassification",
+    "pk": 3
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 8,
+        "team": 6
+    },
+    "model": "sports.teamclassification",
+    "pk": 4
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 7,
+        "team": 7
+    },
+    "model": "sports.teamclassification",
+    "pk": 5
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 7,
+        "team": 8
+    },
+    "model": "sports.teamclassification",
+    "pk": 6
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 6,
+        "team": 9
+    },
+    "model": "sports.teamclassification",
+    "pk": 7
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 6,
+        "team": 10
+    },
+    "model": "sports.teamclassification",
+    "pk": 8
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 5,
+        "team": 11
+    },
+    "model": "sports.teamclassification",
+    "pk": 9
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 5,
+        "team": 12
+    },
+    "model": "sports.teamclassification",
+    "pk": 10
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 5,
+        "team": 13
+    },
+    "model": "sports.teamclassification",
+    "pk": 11
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 4,
+        "team": 14
+    },
+    "model": "sports.teamclassification",
+    "pk": 12
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 4,
+        "team": 15
+    },
+    "model": "sports.teamclassification",
+    "pk": 13
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 3,
+        "team": 16
+    },
+    "model": "sports.teamclassification",
+    "pk": 14
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 2,
+        "team": 17
+    },
+    "model": "sports.teamclassification",
+    "pk": 15
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 2,
+        "team": 18
+    },
+    "model": "sports.teamclassification",
+    "pk": 16
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 2,
+        "team": 19
+    },
+    "model": "sports.teamclassification",
+    "pk": 17
+},
+{
+    "fields": {
+        "season": 2,
+        "points": 1,
+        "team": 20
+    },
+    "model": "sports.teamclassification",
+    "pk": 18
+},
+{
+    "fields": {
+        "foo_points": 3,
+        "team_bar": 2,
+        "season": 1,
+        "date": "2014-10-09",
+        "bar_points": 0,
+        "team_foo": 1
+    },
+    "model": "sports.matchresult",
+    "pk": 1
+},
+{
+    "fields": {
+        "foo_points": 2,
+        "team_bar": 20,
+        "season": 2,
+        "date": "2014-10-06",
+        "bar_points": 1,
+        "team_foo": 16
+    },
+    "model": "sports.matchresult",
+    "pk": 2
+},
+{
+    "fields": {
+        "title": "REAL UNION 3-0 AURRERA",
+        "image": "images/news/aurrera.jpg",
+        "content": "<p>\u200b<strong><strong>AURRERA:</strong></strong> Diego, Calle, Arkaitz, Endika, Yeray, Aizpurua (Telmo 62&#39;), Be&ntilde;at, Hugo ( Urdax 86&#39;), Markel Guevara, Jonier, J. Ander (Go&ntilde;i 62&#39;).<br />\r\n<strong><strong>REAL UNION:</strong></strong><strong> </strong>Tena, Ibarbia, Arzamendi, Azkoiti, Morcillo, Iriondo, Mikel Alonso( Dom&iacute;nguez 72&#39;), Mujika (Be&ntilde;at 46&#39;), Silas (Patxi Mart&iacute;nez 60&#39;), Urbieta, Goikoetxea.<br />\r\n<strong>GOLAK: </strong>1-0: Alonso (27&#39;). 2-0: Goikoetxea (35&#39;). 3-0: Urbieta (52&#39;)<br />\r\n<strong>EPAILEA: </strong>Mateos. Txartel horiak: Silas (Real Union); Aizpurua (Aurrera).</p>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>Mailen arteko desberdintasuna agerian gelditu zen atzo Stadium Galen. Hirugarren mailan ari den Gasteizko Aurrera menderatu zuen Real Unionek, Federazio Kopako bigarren kanporaketan. Seriotasuna, lana eta eraginkortasuna izan zituen Aitor Zulaikaren taldeak. Mikel Alonsok sartu zuen lehen gola ordu erdia bete baino lehen, falta jaurtiketa bikain batekin. Zortzi minutu beranduago, Goioetxeak aldea handitu zuen, penaltiko arrastotik. Bigarren zatian eroso aritu ziren txuribeltzak. Urbietaren hirugarren golarekin, abantaila handia lortu zuen Real Unionek itzuliko neurketarako. Hala ere, Balmasedaren kontra gertatutakoa ikusita, ezin esan kanporaketa erabakita dagoenik. Gasteizen bukatu beharko du atzo hasitako lana Aitor Zulaikaren taldeak.</div>\r\n",
+        "published": "2014-10-09T20:28:23Z",
+        "sport": 2,
+        "slug": "real-union-3-0-aurrera",
+        "match": 1
+    },
+    "model": "sports.news",
+    "pk": 1
+},
+{
+    "fields": {
+        "title": "Ongi etorri Kiroletik gune berrira",
+        "image": "",
+        "content": "<h2>\u200bHemen gaude berriz!</h2>\r\n",
+        "published": "2015-02-01T20:46:43Z",
+        "sport": null,
+        "slug": "ongi-etorri-kiroletik-gune-berrira",
+        "match": null
+    },
+    "model": "sports.news",
+    "pk": 2
+},
+{
+    "fields": {
+        "title": "Irundarrek irabazi dute Erregionaleko derbia",
+        "image": "",
+        "content": "<p>\u200b</p>\r\n\r\n<div>Larunbatean jokatu zuten Real Union Bk eta Hondarribiak Ohorezko Erregionaleko derbi bidasoarra. Stadium Galen izan zen hitzordua, eta etxekoek lortu zituzten hiru puntuak. Hondarribiak eman zuen lehen kolpea, Oliverik aurretik jarri baitzituen berdeak 22.minutuan.</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>Burumakur hartu zuten txuribeltzek aldagelarako bidea. Baina bigarren zatian, markagailuari buelta eman zioten. Pepek banakoa sartu zuen 57.ean, penalti zalantzagarria baliatuta. Lau minutu beranduago, Urbietak baloia sarera bidali zuen berriro, Patxi taldekidearen jokaldia borobilduta. Lanean segitu arren, Hondarribiak ez zuen binakoa lortu.</div>\r\n\r\n<div>&nbsp;</div>\r\n\r\n<div>Hori dela eta, sailkapeneko azken tokian gelditu da Koldo Aranbururen taldea. Lau jardunalditan puntu bat lortu duen talde bakarra da. Filial txuribeltzak, berrriz, arnasa hartu du lehen garaipenarekin. Asteburuan Hondarribiak Ordizia hartuko du Hondartzan (16:30). Union B Lesakan ariko da igandean, Beti Gazteren aurka (18:30).</div>\r\n",
+        "published": "2014-12-27T20:54:54Z",
+        "sport": 2,
+        "slug": "irundarrek-irabazi-dute-erregionaleko-derbia",
+        "match": 2
+    },
+    "model": "sports.news",
+    "pk": 3
+},
+{
+    "fields": {
+        "active": true,
+        "position": 0,
+        "content": "<p><a href=\"http://antxetamedia.info\"><img src=\"http://i1000.photobucket.com/albums/af123/kiroletik/antxetairudia_zps9ccb014c.jpg\" style=\"height:189px; width:134px\" /></a></p>\r\n",
+        "name": "Antxeta irratirako lotura"
+    },
+    "model": "widgets.widget",
+    "pk": 1
+},
+{
+    "fields": {
+        "active": true,
+        "position": -2,
+        "content": "<p><a href=\"https://twitter.com/Kiroletik_bloga\">Twitterren bitarteko albisteak</a></p>\r\n",
+        "name": "Twitterreko feeda"
+    },
+    "model": "widgets.widget",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 1
+},
+{
+    "fields": {
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 3
+},
+{
+    "fields": {
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 4
+},
+{
+    "fields": {
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 5
+},
+{
+    "fields": {
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 7
+},
+{
+    "fields": {
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 9
+},
+{
+    "fields": {
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 10
+},
+{
+    "fields": {
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 11
+},
+{
+    "fields": {
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 12
+},
+{
+    "fields": {
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 13
+},
+{
+    "fields": {
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 14
+},
+{
+    "fields": {
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 15
+},
+{
+    "fields": {
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 16
+},
+{
+    "fields": {
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 17
+},
+{
+    "fields": {
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 18
+},
+{
+    "fields": {
+        "codename": "add_flatpage",
+        "name": "Can add Flatpage",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 19
+},
+{
+    "fields": {
+        "codename": "change_flatpage",
+        "name": "Can change Flatpage",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 20
+},
+{
+    "fields": {
+        "codename": "delete_flatpage",
+        "name": "Can delete Flatpage",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 21
+},
+{
+    "fields": {
+        "codename": "add_banner",
+        "name": "Can add Banner",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 22
+},
+{
+    "fields": {
+        "codename": "change_banner",
+        "name": "Can change Banner",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 23
+},
+{
+    "fields": {
+        "codename": "delete_banner",
+        "name": "Can delete Banner",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 24
+},
+{
+    "fields": {
+        "codename": "add_sport",
+        "name": "Can add Sport",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 25
+},
+{
+    "fields": {
+        "codename": "change_sport",
+        "name": "Can change Sport",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 26
+},
+{
+    "fields": {
+        "codename": "delete_sport",
+        "name": "Can delete Sport",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 27
+},
+{
+    "fields": {
+        "codename": "add_town",
+        "name": "Can add Town",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 28
+},
+{
+    "fields": {
+        "codename": "change_town",
+        "name": "Can change Town",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 29
+},
+{
+    "fields": {
+        "codename": "delete_town",
+        "name": "Can delete Town",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 30
+},
+{
+    "fields": {
+        "codename": "add_competition",
+        "name": "Can add Competition",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 31
+},
+{
+    "fields": {
+        "codename": "change_competition",
+        "name": "Can change Competition",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 32
+},
+{
+    "fields": {
+        "codename": "delete_competition",
+        "name": "Can delete Competition",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 33
+},
+{
+    "fields": {
+        "codename": "add_season",
+        "name": "Can add Season",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 34
+},
+{
+    "fields": {
+        "codename": "change_season",
+        "name": "Can change Season",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 35
+},
+{
+    "fields": {
+        "codename": "delete_season",
+        "name": "Can delete Season",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 36
+},
+{
+    "fields": {
+        "codename": "add_team",
+        "name": "Can add Team",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 37
+},
+{
+    "fields": {
+        "codename": "change_team",
+        "name": "Can change Team",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 38
+},
+{
+    "fields": {
+        "codename": "delete_team",
+        "name": "Can delete Team",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 39
+},
+{
+    "fields": {
+        "codename": "add_teamclassification",
+        "name": "Can add Team classification",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 40
+},
+{
+    "fields": {
+        "codename": "change_teamclassification",
+        "name": "Can change Team classification",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 41
+},
+{
+    "fields": {
+        "codename": "delete_teamclassification",
+        "name": "Can delete Team classification",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 42
+},
+{
+    "fields": {
+        "codename": "add_matchresult",
+        "name": "Can add Match result",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 43
+},
+{
+    "fields": {
+        "codename": "change_matchresult",
+        "name": "Can change Match result",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 44
+},
+{
+    "fields": {
+        "codename": "delete_matchresult",
+        "name": "Can delete Match result",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 45
+},
+{
+    "fields": {
+        "codename": "add_news",
+        "name": "Can add News",
+        "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 46
+},
+{
+    "fields": {
+        "codename": "change_news",
+        "name": "Can change News",
+        "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 47
+},
+{
+    "fields": {
+        "codename": "delete_news",
+        "name": "Can delete News",
+        "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 48
+},
+{
+    "fields": {
+        "codename": "add_widget",
+        "name": "Can add Widget",
+        "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 49
+},
+{
+    "fields": {
+        "codename": "change_widget",
+        "name": "Can change Widget",
+        "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 50
+},
+{
+    "fields": {
+        "codename": "delete_widget",
+        "name": "Can delete Widget",
+        "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 51
+},
+{
+    "fields": {
+        "username": "kiroletik",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2014-12-27T20:03:35.260Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$canGzuhZJFql$Z/tiSyEdm9PgA5GL7+8UOnXilUFf3Z5MSU6OnZ6+cS4=",
+        "email": "",
+        "date_joined": "2014-12-27T19:58:11.273Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:05:29.608Z",
+        "object_repr": "Goiburu zaharra",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 8
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:09:12.147Z",
+        "object_repr": "Gure Inguruan",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:10:03.617Z",
+        "object_repr": "Antxeta irratirako lotura",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 17
+    },
+    "model": "admin.logentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2014-12-27T20:11:02.784Z",
+        "object_repr": "Antxeta irratirako lotura",
+        "object_id": "1",
+        "change_message": "Changed content.",
+        "user": 1,
+        "content_type": 17
+    },
+    "model": "admin.logentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:14:02.308Z",
+        "object_repr": "Twitterreko feeda",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 17
+    },
+    "model": "admin.logentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2014-12-27T20:15:09.337Z",
+        "object_repr": "Twitterreko feeda",
+        "object_id": "2",
+        "change_message": "Changed content.",
+        "user": 1,
+        "content_type": 17
+    },
+    "model": "admin.logentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:17:58.260Z",
+        "object_repr": "Eskubaloia",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:02.446Z",
+        "object_repr": "Futbola",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:07.640Z",
+        "object_repr": "Arrauna",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:13.568Z",
+        "object_repr": "Errugbia",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:19.428Z",
+        "object_repr": "Mahai tenisa",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:30.281Z",
+        "object_repr": "Saskibaloia",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:47.860Z",
+        "object_repr": "Trialsina",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:18:52.763Z",
+        "object_repr": "Triatloia",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:19:04.948Z",
+        "object_repr": "Atletismoa",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:19:11.271Z",
+        "object_repr": "Automobilismoa",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:21:43.667Z",
+        "object_repr": "Hirugarren Mailako Liga",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:21:56.214Z",
+        "object_repr": "2014-10-09",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:22:56.391Z",
+        "object_repr": "Irun",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:23:01.014Z",
+        "object_repr": "Real Union",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 20
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:23:38.668Z",
+        "object_repr": "Aurrera",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 21
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:24:05.232Z",
+        "object_repr": "Real Union: 3 - Aurrera: 0",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 22
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:29:18.659Z",
+        "object_repr": "REAL UNION 3-0 AURRERA",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 16
+    },
+    "model": "admin.logentry",
+    "pk": 23
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:54:22.504Z",
+        "object_repr": "Ongi etorri Kiroletik gune berrira",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 16
+    },
+    "model": "admin.logentry",
+    "pk": 24
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2014-12-27T20:54:45.449Z",
+        "object_repr": "Ongi etorri Kiroletik gune berrira",
+        "object_id": "2",
+        "change_message": "Changed published.",
+        "user": 1,
+        "content_type": 16
+    },
+    "model": "admin.logentry",
+    "pk": 25
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:57:02.539Z",
+        "object_repr": "Ohorezko Erregionala",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 26
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:57:57.926Z",
+        "object_repr": "ARETXABALETA K.E. ",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 27
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:08.455Z",
+        "object_repr": "AURRERA K.E. ",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 28
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:15.835Z",
+        "object_repr": "ORDIZIA K.E. ",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 29
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:22.217Z",
+        "object_repr": "TOLOSA C.F. ",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 30
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:33.220Z",
+        "object_repr": "HERNANI C.D.",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 31
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:41.130Z",
+        "object_repr": "MARTUTENE K.E.",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 32
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:50.823Z",
+        "object_repr": "ELGOIBAR C.D.",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 33
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:58:58.583Z",
+        "object_repr": "ANAITASUNA C.D",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 34
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:10.866Z",
+        "object_repr": "ZARAUTZ K.E.",
+        "object_id": "11",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 35
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:19.214Z",
+        "object_repr": "OSTADAR S.K.T.",
+        "object_id": "12",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 36
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:26.404Z",
+        "object_repr": "USURBIL F.T. ",
+        "object_id": "13",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 37
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:33.114Z",
+        "object_repr": "BETI GAZTE K.J.K.E. ",
+        "object_id": "14",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 38
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:40.254Z",
+        "object_repr": "BERGARA K.E. ",
+        "object_id": "15",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 39
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T20:59:50.519Z",
+        "object_repr": "REAL UNION CLUB SAD",
+        "object_id": "16",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 40
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:04:50.292Z",
+        "object_repr": "ALO\u00d1A MENDI KE ",
+        "object_id": "17",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 41
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:06:31.782Z",
+        "object_repr": "TOURING C.D.",
+        "object_id": "18",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 42
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:06:40.459Z",
+        "object_repr": "ANTZUOLA K.E. ",
+        "object_id": "19",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 43
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:06:53.032Z",
+        "object_repr": "Hondarribia",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 44
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:06:55.432Z",
+        "object_repr": "HONDARRIBIA F.E ",
+        "object_id": "20",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 45
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:09:23.374Z",
+        "object_repr": "2014-10-06",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 46
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:09:44.405Z",
+        "object_repr": "REAL UNION CLUB SAD: 2 - HONDARRIBIA F.E : 1",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 47
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2014-12-27T21:09:49.023Z",
+        "object_repr": "Irundarrek irabazi dute Erregionaleko derbia",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 16
+    },
+    "model": "admin.logentry",
+    "pk": 48
+}
+]
