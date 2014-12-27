@@ -76,9 +76,9 @@ class Season(models.Model):
     def get_absolute_url(self):
         return reverse('season-detail', kwargs={
             'slug': self.competition.slug,
-            'year': self.date.year,
-            'month': self.date.month,
-            'day': self.date.day})
+            'year': '{:04d}'.format(self.date.year),
+            'month': '{:02d}'.format(self.date.month),
+            'day': '{:02d}'.format(self.date.day)})
 
 
 class Team(models.Model):
@@ -182,7 +182,7 @@ class News(models.Model):
 
     def get_absolute_url(self):
         return reverse('news-detail', kwargs={
-            'year': self.published.year,
-            'month': self.published.month,
-            'day': self.published.day,
+            'year': '{:04d}'.format(self.published.year),
+            'month': '{:02d}'.format(self.published.month),
+            'day': '{:02d}'.format(self.published.day),
             'slug': self.slug})
