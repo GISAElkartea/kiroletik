@@ -2,7 +2,7 @@ Install
 =======
 
     # Python requirements
-    pip install -r requirements/base.txt
+    pip install -r requirements.txt
 
     # JS requirements
     cd kiroletik/static/
