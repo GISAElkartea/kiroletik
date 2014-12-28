@@ -7,6 +7,17 @@
 <h2>{{ season.competition }}</h2>
 <h3>{{ season }}</h3>
 
+<div class="pagination">
+  <span class="step-links">
+    {% if season.previous %}
+    <a href="{{ season.previous.get_absolute_url }}">{{ season.previous }}</a>
+    {% endif %}
+    {% if season.next %}
+    <a href="{{ season.next.get_absolute_url }}">{{ season.next }}</a>
+    {% endif %}
+  </span>
+</div>
+
 <table>
   <thead>
     <tr>
