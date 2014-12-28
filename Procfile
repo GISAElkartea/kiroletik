@@ -1,1 +1,1 @@
-web: gunicorn kiroletik.wsgi --log-file -
+web: gunicorn kiroletik.heroku.wsgi --log-file -
