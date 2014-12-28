@@ -16,6 +16,12 @@ Install
     python manage.py createsuperuser
 
 
+Sample data
+===========
+
+    python manage.py loaddata sample_data.json
+
+
 Test
 ====
 
