@@ -21,7 +21,7 @@
       <nav>
         <ul>
           <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
-          {% for sport in sports %}
+          {% for sport in sports|slice:":5" %}
           <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
           {% endfor %}
           {% for flatpage in flatpages %}
