@@ -1,12 +1,46 @@
-from datetime import timedelta
+from datetime import timedelta, date
 
 from django.test import TestCase
+from django.db import IntegrityError
 from django.core.urlresolvers import reverse
 from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport, MatchResult, Season
+from .models import News, Sport, MatchResult, Season, Competition
+
+
+class SportTestCase(TestCase):
+    def setUp(self):
+        today = date.today()
+        self.competition = mommy.make(Competition)
+        self.alpha = mommy.make(Season, competition=self.competition,
+                                date=(today + timedelta(days=1)))
+        self.beta = mommy.make(Season, competition=self.competition,
+                               date=(today + timedelta(days=2)))
+        self.gamme = mommy.make(Season, competition=self.competition,
+                                date=(today + timedelta(days=3)))
+        self.delta = mommy.make(Season, competition=self.competition,
+                                date=(today + timedelta(days=4)))
+        self.epsilon = mommy.make(Season, competition=self.competition,
+                                  date=(today + timedelta(days=5)))
+
+    def test_not_same_date_and_competition(self):
+        with self.assertRaises(IntegrityError):
+            mommy.make(Season, competition=self.competition,
+                       date=self.alpha.date)
+
+    def test_next_present(self):
+        self.assertEqual(self.alpha.next(), self.beta)
+
+    def test_next_not_present(self):
+        self.assertEqual(self.epsilon.next(), None)
+
+    def test_previous_present(self):
+        self.assertEqual(self.epsilon.previous(), self.delta)
+
+    def test_previous_not_present(self):
+        self.assertEqual(self.alpha.previous(), None)
 
 
 class NewsListTestCase(TestCase):

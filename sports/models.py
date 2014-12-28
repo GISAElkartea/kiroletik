@@ -89,6 +89,16 @@ class Season(models.Model):
             'month': '{:02d}'.format(self.date.month),
             'day': '{:02d}'.format(self.date.day)})
 
+    def next(self):
+        next = Season.objects.filter(competition=self.competition,
+                                     date__gt=self.date)
+        return next.last()
+
+    def previous(self):
+        previous = Season.objects.filter(competition=self.competition,
+                                         date__lt=self.date)
+        return previous.first()
+
 
 class Team(models.Model):
     class Meta:
