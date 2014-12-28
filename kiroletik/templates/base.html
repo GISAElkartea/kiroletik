@@ -14,7 +14,10 @@
   </head>
   <body>
     <header>
-      <img src="{{ banner.image.url }}" alt="kiroletik" />
+      <hgroup>
+        <h1>Kiroletik</h1>
+        <h2>Behe Bidasoako kirola</h2>
+      </hgroup>
       <nav>
         <ul>
           <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
@@ -26,6 +29,7 @@
           {% endfor %}
         </ul>
       </nav>
+    </header>
 
     <div id="wrap">
 
