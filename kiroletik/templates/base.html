@@ -24,12 +24,12 @@
           <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
           {% endfor %}
           <li>
-              <a href="">{% trans 'Others' %}</a>
-                <ul id="subNav">
-                  {% for sport in sports|slice:"5:" %}
-                  <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
-                  {% endfor %}
-                </ul>
+            <a href="">{% trans 'Others' %}</a>
+            <ul id="subNav">
+              {% for sport in sports|slice:"5:" %}
+              <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
+              {% endfor %}
+            </ul>
           </li>
           <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
           {% for flatpage in flatpages %}
