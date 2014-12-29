@@ -19,11 +19,11 @@
         <h2><a href="/">Behe Bidasoako kirola</a></h2>
       </hgroup>
       <nav>
-        <ul>
+        <ul id="mainNav">
           {% for sport in sports|slice:":5" %}
           <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
           {% endfor %}
-          <li>
+          <li id="others">
             <a href="">{% trans 'Others' %}</a>
             <ul id="subNav">
               {% for sport in sports|slice:"5:" %}

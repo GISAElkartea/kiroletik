@@ -1,23 +1,30 @@
 nav
     display: inline-block
     vertical-align: middle
-    width: 83%
+    width: 100%
+    margin-top: -3rem
+    position: relative
     ul
         margin: 0
         padding: 0
         font-size: 0
         li
-            width: 12%
             list-style: none
             display: inline-block
             font-size: 1.1rem
-            padding-right: .5%
             text-align: center
             a
                 color: adjust-color(white, $lightness:-30)
                 text-decoration: none
                 text-transform: lowercase
                 font-variant: small-caps
+    ul#mainNav > li:nth-child(1), ul#mainNav > li:nth-child(2), ul#mainNav > li:nth-child(3), ul#mainNav > li:nth-child(4)
+        text-align: left
+        padding-right: 4%
+    ul#mainNav > li:nth-child(5), ul#mainNav > li:nth-child(6), ul#mainNav > li:nth-child(7), ul#mainNav > li:nth-child(8)
+        float: right
+        text-align: right
+        padding-left: 4%
     @media screen and (max-width: 30em)
         width: 40%
         ul
@@ -35,5 +42,20 @@ nav
             li
                 width: 24%
                 font-size: 1rem
-    ul#subNav
-        display: none
+    li#others
+        ul#subNav
+            display: none
+            position: absolute
+            bottom: -10rem
+            left: 0
+            margin: 0
+            padding: 0
+            width: 100%
+            background: adjust-color(black, $lightness:10)
+            border-top: adjust-color(white, $lightness:-60) solid .05rem
+            li
+                padding: .6rem
+                float: left
+    li#others:hover
+        ul#subNav
+            display: block
