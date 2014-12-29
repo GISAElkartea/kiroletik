@@ -7,21 +7,24 @@ from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
 
 
-class SportManager(models.Manager):
-    def get_queryset(self, *args, **kwargs):
-        qs = super(SportManager, self).get_queryset(*args, **kwargs)
-        qs = qs.annotate(news_amount=models.Count('news'))
-        return qs.order_by('-news_amount')
+class SportQuerySet(models.QuerySet):
+    def on_menu(self):
+        return self.filter(on_menu=True)
+
+    def not_on_menu(self):
+        return self.filter(on_menu=False)
 
 
 class Sport(models.Model):
-    objects = SportManager()
+    objects = SportQuerySet.as_manager()
 
     class Meta:
+        ordering = ['name']
         verbose_name = _('Sport')
         verbose_name_plural = _('Sports')
 
     name = models.CharField(max_length=100, unique=True, verbose_name=_('name'))
+    on_menu = models.BooleanField(default=False, verbose_name=_('on menu'))
     image = models.ImageField(upload_to='images/sports', blank=True,
                               verbose_name=_('image'))
 

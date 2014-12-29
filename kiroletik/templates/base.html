@@ -20,13 +20,13 @@
       </hgroup>
       <nav>
         <ul id="mainNav">
-          {% for sport in sports|slice:":5" %}
+          {% for sport in sports.on_menu %}
           <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
           {% endfor %}
           <li id="others">
             <a href="">{% trans 'Others' %}</a>
             <ul id="subNav">
-              {% for sport in sports|slice:"5:" %}
+              {% for sport in sports.not_on_menu %}
               <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
               {% endfor %}
             </ul>

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from .models import (Sport, Town, Competition, Season, Team, TeamClassification,
                      MatchResult, News)
@@ -8,8 +9,20 @@ admin.site.register(Town)
 
 
 class SportAdmin(admin.ModelAdmin):
-    fields = ('name', 'image')
-admin.site.register(Sport)
+    fields = (('name', 'on_menu'), 'image')
+    list_display = ('name', 'on_menu')
+    list_filter = ('on_menu',)
+    actions = ('put_on_menu', 'remove_from_menu')
+
+    def put_on_menu(self, request, queryset):
+        queryset.update(on_menu=True)
+    put_on_menu.short_description = _('Put on menu')
+
+    def remove_from_menu(self, request, queryset):
+        queryset.update(on_menu=False)
+    remove_from_menu.short_description = _('Remove from menu')
+
+admin.site.register(Sport, SportAdmin)
 
 
 class CompetitionAdmin(admin.ModelAdmin):
