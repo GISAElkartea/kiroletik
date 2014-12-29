@@ -5,21 +5,23 @@
 
 {% block content %}
 
-{% if sport %}
-<h2>{{ sport }}</h2>
+<article class="news">
+  {% if sport %}
+  <h2>{{ sport }}</h2>
 
-{% for competition in sport.competition_set.select_related %}
-<a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
+  {% for competition in sport.competition_set.select_related %}
+  <a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
 
-{% for season in competition.season_set.select_related %}
-<a href="{{ season.get_absolute_url }}">{{ season }}</a>
-{% endfor %}
-{% endfor %}
-{% endif %}
+  {% for season in competition.season_set.select_related %}
+  <a href="{{ season.get_absolute_url }}">{{ season }}</a>
+  {% endfor %}
+  {% endfor %}
+  {% endif %}
 
-{% for news in news_list %}
-<a href="{{ news.get_absolute_url }}">{{ news }}</a>
-{% endfor %}
+  {% for news in news_list %}
+  <a href="{{ news.get_absolute_url }}">{{ news }}</a>
+  {% endfor %}
+</article>
 
 {% include 'pagination.html' with page_obj=page_obj only %}
 
