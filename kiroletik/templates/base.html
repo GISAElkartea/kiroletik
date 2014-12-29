@@ -14,28 +14,26 @@
   </head>
   <body>
     <header>
-      <div id="mainHeader">
-        <hgroup>
-          <h1>Kiroletik</h1>
-          <h2>Behe Bidasoako kirola</h2>
-        </hgroup>
-        <nav>
-          <ul>
-            <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
-            {% for sport in sports|slice:":5" %}
-            <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
-            {% endfor %}
-            {% for flatpage in flatpages %}
-            <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
-            {% endfor %}
-          </ul>
-          <ul id="subNav">
-            {% for sport in sports|slice:"5:" %}
-            <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
+      <hgroup>
+        <h1>Kiroletik</h1>
+        <h2>Behe Bidasoako kirola</h2>
+      </hgroup>
+      <nav>
+        <ul>
+          <li><a href="{% url 'match-list' %}">{% trans 'Matches' %}</a></li>
+          {% for sport in sports|slice:":5" %}
+          <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
+          {% endfor %}
+          {% for flatpage in flatpages %}
+          <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
+          {% endfor %}
+        </ul>
+        <ul id="subNav">
+          {% for sport in sports|slice:"5:" %}
+          <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
     </header>
 
     <div id="wrap">
@@ -44,16 +42,16 @@
         <img src="{{ banner.image.url }}" alt="kiroletik" />
       </div>
 
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+
       <aside>
         {% for widget in widgets %}
         {{ widget.content|safe }}
         {% endfor %}
       </aside>
-
-      <main>
-        {% block content %}
-        {% endblock content %}
-      </main>
 
       <footer>
       </footer>
