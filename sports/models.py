@@ -178,11 +178,13 @@ class News(models.Model):
     objects = NewsQuerySet.as_manager()
 
     class Meta:
-        ordering = ['-published', 'pk']
+        ordering = ['-highlighted', '-published', 'pk']
         verbose_name = _('News')
         verbose_name_plural = _('News')
 
     published = models.DateTimeField(default=now)
+    highlighted = models.BooleanField(default=False,
+                                      verbose_name=_('highlighted'))
     sport = models.ForeignKey(Sport, null=True, blank=True,
                               verbose_name=_('sport'))
     match = models.ForeignKey(MatchResult, null=True, blank=True,
@@ -197,6 +199,11 @@ class News(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self.highlighted:
+            News.objects.update(highlighted=False)
+        super(News, self).save(*args, **kwargs)
 
     @property
     def is_published(self):

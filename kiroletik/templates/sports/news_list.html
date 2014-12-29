@@ -19,6 +19,9 @@
   {% endif %}
 
   {% for news in news_list %}
+  {# The first news will always be the highlighted one #}
+  {% if forloop.first %}
+  {% endif %}
   <a href="{{ news.get_absolute_url }}">{{ news }}</a>
   {% endfor %}
 </article>
