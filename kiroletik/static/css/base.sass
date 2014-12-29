@@ -2,41 +2,17 @@ body
     background: adjust-color(black, $lightness:10)
     margin: 0
     font-family: $sans
+    min-width: 400px
+    @media screen and (max-width: 40em)
+        width: 130%
 
 header, div#wrap
     width: 85%
     margin: 0 auto
     max-width: 1200px
+    @media screen and (max-width: 40em)
+        width: 95%
 
-header
-    padding: 2rem 0
-    font-size: 0
-    hgroup
-        font-family: $display
-        display: inline-block
-        position: relative
-        vertical-align: center
-        width: 17%
-        h1
-            font-size: 2.5rem
-            border-top: .1em solid adjust-color(white, $lightness:-30)
-            border-bottom: .1em solid adjust-color(white, $lightness:-30)
-            display: inline-block
-            padding: .3em .7em .1em .7em
-            a
-                color: adjust-color(white, $lightness:-30)
-        h2
-            font-size: 1.49rem
-            width: 100%
-            position: absolute
-            left: 0
-            bottom: -.15em
-            a
-                color: adjust-color(white, $lightness:-85)
-        h1, h2
-            margin: 0
-            a
-                text-decoration: none
 
 div#wrap
     font-size: 0

@@ -1,0 +1,41 @@
+header
+    padding: 2rem 0
+    font-size: 0
+    hgroup
+        font-family: $display
+        display: inline-block
+        position: relative
+        vertical-align: middle
+        width: 17%
+        @media screen and (max-width: 40em)
+            width: 30%
+        h1
+            font-size: 2.5rem
+            border-top: .1em solid adjust-color(white, $lightness:-30)
+            border-bottom: .1em solid adjust-color(white, $lightness:-30)
+            display: inline-block
+            padding: .3em .7em .1em .7em
+            a
+                color: adjust-color(white, $lightness:-30)
+            @media screen and (max-width: 64em)
+                font-size: 1.5rem
+            @media screen and (min-width: 64em) and (max-width: 90em)
+                font-size: 2rem
+        h2
+            font-size: 1.49rem
+            width: 100%
+            position: absolute
+            left: 0
+            bottom: -.15em
+            a
+                color: adjust-color(white, $lightness:-85)
+            @media screen and (max-width: 64em)
+                font-size: .93rem
+            @media screen and (min-width: 64em) and (max-width: 90em)
+                font-size: 1.19rem
+        h1, h2
+            margin: 0
+            a
+                text-decoration: none
+        @media screen and (min-width: 40em) and (max-width: 64em)
+            width: 25%

@@ -1,6 +1,6 @@
 nav
     display: inline-block
-    vertical-align: center
+    vertical-align: middle
     width: 83%
     ul
         margin: 0
@@ -18,5 +18,22 @@ nav
                 text-decoration: none
                 text-transform: lowercase
                 font-variant: small-caps
+    @media screen and (max-width: 30em)
+        width: 40%
+        ul
+            li
+                width: 90%
+    @media screen and (min-width: 30em) and (max-width: 40em)
+        width: 65%
+        ul
+            li
+                width: 40%
+
+    @media screen and (min-width: 40em) and (max-width: 64em)
+        width: 73%
+        ul
+            li
+                width: 24%
+                font-size: 1rem
     ul#subNav
         display: none
