@@ -27,7 +27,7 @@
           {% for flatpage in flatpages %}
           <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
           {% endfor %}
-          <li><a href="">Besteak</a></li>
+          <li><a href="">{% trans 'Others' %}</a></li>
         </ul>
         <ul id="subNav">
           {% for sport in sports|slice:"5:" %}
