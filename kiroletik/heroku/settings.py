@@ -1,6 +1,5 @@
 import os
 import urlparse
-import json
 
 from django.utils.crypto import get_random_string
 
@@ -55,11 +54,24 @@ CACHES = {
         'BACKEND': 'django_bmemcached.memcached.BMemcached',
         'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
         'OPTIONS': {
-                    'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
-                    'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
-            }
+            'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
+            'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
+        }
     }
 }
+
+
+#########
+# Redis #
+#########
+
+redis_url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
+
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = redis_url.hostname
+SESSION_REDIS_PORT = redis_url.port
+SESSION_REDIS_PASSWORD = redis_url.password
+
 
 ########
 # SMTP #
