@@ -2,3 +2,5 @@
 
 django-toolbelt==0.0.1
 django-secure
+python-binary-memcached
+python-bmemcached

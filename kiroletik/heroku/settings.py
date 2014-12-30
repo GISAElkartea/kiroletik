@@ -1,8 +1,13 @@
+import os
+import urlparse
+import json
+
 from django.utils.crypto import get_random_string
 
 import dj_database_url
 
 from kiroletik.settings import * #noqa
+
 
 DEBUG = False
 
@@ -40,6 +45,21 @@ ALLOWED_HOSTS = ['kiroletik.herokuapp.com',
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+#############
+# Memcached #
+#############
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_bmemcached.memcached.BMemcached',
+        'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
+        'OPTIONS': {
+                    'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
+                    'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
+            }
+    }
+}
 
 ########
 # SMTP #
