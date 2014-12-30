@@ -8,6 +8,7 @@ DEBUG = False
 
 DATABASES['default'] = dj_database_url.config()
 
+
 #####################
 # Security settings #
 #####################
@@ -39,6 +40,14 @@ ALLOWED_HOSTS = ['kiroletik.herokuapp.com',
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+########
+# SMTP #
+########
+
+ADMINS = [
+    ('Unai Zalakain', 'contact@unaizalakain.info'),
+]
 
 ###########
 # Logging #
