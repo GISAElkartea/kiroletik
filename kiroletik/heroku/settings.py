@@ -21,6 +21,8 @@ INSTALLED_APPS += ['storages']
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_CUSTOM_DOMAIN = 's3.us.archive.org'
+AWS_STORAGE_BUCKET_NAME = 'kiroletik'
+WS_AUTO_CREATE_BUCKET = True
 
 #####################
 # Security settings #
