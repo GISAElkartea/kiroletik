@@ -42,8 +42,8 @@ ALLOWED_HOSTS = ['kiroletik.herokuapp.com',
 # Static assets #
 #################
 
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+# STATIC_ROOT = 'staticfiles'
+# STATIC_URL = '/static/'
 
 #############
 # Memcached #
