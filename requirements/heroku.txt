@@ -6,5 +6,4 @@ python-binary-memcached
 django-bmemcached
 django-redis-sessions
 boto
-# this magic comment installs mercurial :: hg+
 -e hg+https://bitbucket.org/david/django-storages#egg=storages
