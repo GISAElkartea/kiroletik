@@ -21,13 +21,13 @@ DATABASES['default'] = dj_database_url.config()
 INSTALLED_APPS += ['storages']
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_S3_CUSTOM_DOMAIN = 's3.us.archive.org'
+AWS_S3_HOST = 's3.us.archive.org'
+AWS_S3_USE_SSL = False
 AWS_STORAGE_BUCKET_NAME = 'kiroletik'
-WS_AUTO_CREATE_BUCKET = True
+AWS_AUTO_CREATE_BUCKET = True
 AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 AWS_S3_SECURE_URLS = False
-AWS_S3_USE_SSL = False
-AWS_S3_HOST = 's3.us.archive.org'
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.us.archive.org'.format(AWS_STORAGE_BUCKET_NAME)
 
 #####################
 # Security settings #
