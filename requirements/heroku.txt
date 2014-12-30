@@ -7,3 +7,4 @@ django-bmemcached
 django-redis-sessions
 boto
 -e hg+https://bitbucket.org/david/django-storages#egg=storages
+bugsnag>=1.2.5

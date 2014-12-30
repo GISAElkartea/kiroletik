@@ -102,6 +102,8 @@ EMAIL_SUBJECT_PREFIX = '[Kiroletik] '
 # Logging #
 ###########
 
+MIDDLEWARE_CLASSES += ['bugsnag.django.middleware.BugsnagMiddleware']
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
