@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kiroletik 0.1\n"
+"Report-Msgid-Bugs-To: unai@gisa-elkartea.org\n"
+"POT-Creation-Date: 2014-12-30 11:03+0000\n"
+"PO-Revision-Date: 2014-12-30 12:04+1\n"
+"Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
+"Language-Team: Basque\n"
+"Language: Basque\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: banners/models.py:18
+msgid "Banner"
+msgstr "Goiburua"
+
+#: banners/models.py:19
+msgid "Banners"
+msgstr "Goiburuak"
+
+#: banners/models.py:21 sports/models.py:26 sports/models.py:57
+#: sports/models.py:83 sports/models.py:112 widgets/models.py:24
+msgid "name"
+msgstr "izena"
+
+#: banners/models.py:22 widgets/models.py:26
+msgid "active"
+msgstr "aktibatua"
+
+#: banners/models.py:23 sports/models.py:29 sports/models.py:119
+#: sports/models.py:196
+msgid "image"
+msgstr "irudia"
+
+#: flatpages/admin.py:17
+msgid "Absolute URL"
+msgstr "URL absolutua"
+
+#: flatpages/models.py:21
+msgid "Flatpage"
+msgstr "Orri laua"
+
+#: flatpages/models.py:22
+msgid "Flatpages"
+msgstr "Orri lauak"
+
+#: flatpages/models.py:24 sports/models.py:193
+msgid "title"
+msgstr "izenburua"
+
+#: flatpages/models.py:26
+msgid "URL"
+msgstr "URLa"
+
+#: flatpages/models.py:28
+msgid "published"
+msgstr "argitaratua"
+
+#: flatpages/models.py:29 sports/models.py:194 widgets/models.py:27
+msgid "content"
+msgstr "edukia"
+
+#: kiroletik/templates/404.html:4
+msgid "Page not found"
+msgstr "Ez da orria aurkitu"
+
+#: kiroletik/templates/404.html:7
+msgid "Sorry, the page you requested could not be found."
+msgstr "Barkaiguzu, eskatu duzun orria ezin izan da topatu."
+
+#: kiroletik/templates/base.html:27
+msgid "Others"
+msgstr "Besteak"
+
+#: kiroletik/templates/base.html:34
+msgid "Matches"
+msgstr "Emaitzak"
+
+#: kiroletik/templates/pagination.html:6
+msgid "Previous"
+msgstr "Aurrekoa"
+
+#: kiroletik/templates/pagination.html:10
+#, python-format
+msgid ""
+"\n"
+"      Page %(current)s of %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"      %(current)s orria %(total)stik\n"
+"      "
+
+#: kiroletik/templates/pagination.html:16
+msgid "Next"
+msgstr "Hurrengoa"
+
+#: kiroletik/templates/sports/match_list.html:4
+msgid "Latest Match Results"
+msgstr "Azkeneko Emaitzak"
+
+#: kiroletik/templates/sports/news_list.html:4
+msgid "Latest News"
+msgstr "Azkeneko Berriak"
+
+#: kiroletik/templates/sports/season_detail.html:24
+msgid "Position"
+msgstr "Kokapena"
+
+#: kiroletik/templates/sports/season_detail.html:25 sports/models.py:109
+msgid "Team"
+msgstr "Taldea"
+
+#: kiroletik/templates/sports/season_detail.html:26
+msgid "Points"
+msgstr "Puntuak"
+
+#: sports/admin.py:19
+msgid "Put on menu"
+msgstr "Menuan jarri"
+
+#: sports/admin.py:23
+msgid "Remove from menu"
+msgstr "Menutik kendu"
+
+#: sports/models.py:23
+msgid "Sport"
+msgstr "Kirola"
+
+#: sports/models.py:24
+msgid "Sports"
+msgstr "Kirolak"
+
+#: sports/models.py:27
+msgid "on menu"
+msgstr "menuan"
+
+#: sports/models.py:42
+msgid "Town"
+msgstr "Herria"
+
+#: sports/models.py:43
+msgid "Towns"
+msgstr "Herriak"
+
+#: sports/models.py:45 sports/models.py:116
+msgid "town"
+msgstr "herria"
+
+#: sports/models.py:54
+msgid "Competition"
+msgstr "Lehiaketa"
+
+#: sports/models.py:55
+msgid "Competitions"
+msgstr "Lehiaketak"
+
+#: sports/models.py:58 sports/models.py:113 sports/models.py:189
+msgid "sport"
+msgstr "kirola"
+
+#: sports/models.py:59 sports/models.py:114
+msgid "description"
+msgstr "deskribapena"
+
+#: sports/models.py:77
+msgid "Season"
+msgstr "Jardunaldia"
+
+#: sports/models.py:78
+msgid "Seasons"
+msgstr "Jardunaldiak"
+
+#: sports/models.py:80
+msgid "competition"
+msgstr "lehiaketa"
+
+#: sports/models.py:81 sports/models.py:160
+msgid "date"
+msgstr "data"
+
+#: sports/models.py:110
+msgid "Teams"
+msgstr "Taldeak"
+
+#: sports/models.py:117
+msgid "Local team if town filled in"
+msgstr "Talde lokala herria aukeratzen bada"
+
+#: sports/models.py:133
+msgid "Team classification"
+msgstr "Talde sailkapena"
+
+#: sports/models.py:134
+msgid "Team classifications"
+msgstr "Talde sailkapenak"
+
+#: sports/models.py:136
+msgid "team"
+msgstr "taldea"
+
+#: sports/models.py:137 sports/models.py:162
+msgid "season"
+msgstr "jardunaldia"
+
+#: sports/models.py:138
+msgid "points"
+msgstr "puntuak"
+
+#: sports/models.py:148
+msgid "Match result"
+msgstr "Emaitza"
+
+#: sports/models.py:149
+msgid "Match results"
+msgstr "Emaitzak"
+
+#: sports/models.py:152
+msgid "First team"
+msgstr "Lehen taldea"
+
+#: sports/models.py:154
+msgid "Second team"
+msgstr "Bigarren taldea"
+
+#: sports/models.py:156
+msgid "Points for first team"
+msgstr "Lehen taldearen puntuak"
+
+#: sports/models.py:158
+msgid "Points for second team"
+msgstr "Bigarren taldearen puntuak"
+
+#: sports/models.py:182 sports/models.py:183
+msgid "News"
+msgstr "Berriak"
+
+#: sports/models.py:187
+msgid "highlighted"
+msgstr "nabarmendua"
+
+#: sports/models.py:191
+msgid "match"
+msgstr "partidua"
+
+#: widgets/models.py:21
+msgid "Widget"
+msgstr "Tresnatxoa"
+
+#: widgets/models.py:22
+msgid "Widgets"
+msgstr "Tresnatxoak"
+
+#: widgets/models.py:25
+msgid "position"
+msgstr "kokapena"
