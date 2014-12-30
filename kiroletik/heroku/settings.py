@@ -13,6 +13,15 @@ DEBUG = False
 DATABASES['default'] = dj_database_url.config()
 
 
+###########
+# Storage #
+###########
+
+INSTALLED_APPS += ['storages']
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_CUSTOM_DOMAIN = 's3.us.archive.org'
+
 #####################
 # Security settings #
 #####################

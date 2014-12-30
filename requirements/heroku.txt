@@ -5,3 +5,5 @@ django-secure
 python-binary-memcached
 django-bmemcached
 django-redis-sessions
+django-storages
+boto
