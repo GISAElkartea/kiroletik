@@ -6,5 +6,5 @@ python-binary-memcached
 django-bmemcached
 django-redis-sessions
 boto
-mercurial # So that pip can checkout from a mercurial repo
+# this magic comment installs mercurial :: hg+
 -e hg+https://bitbucket.org/david/django-storages#egg=storages
