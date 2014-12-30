@@ -95,6 +95,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
 EMAIL_USE_TLS = True
+SERVER_EMAIL = 'system@kiroletik.eus'
+EMAIL_SUBJECT_PREFIX = '[Kiroletik] '
 
 ###########
 # Logging #
