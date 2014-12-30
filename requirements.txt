@@ -1,1 +1,3 @@
+# this magic comment installs mercurial :: hg+
+
 -r requirements/heroku.txt
