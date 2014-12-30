@@ -102,6 +102,16 @@ EMAIL_SUBJECT_PREFIX = '[Kiroletik] '
 # Logging #
 ###########
 
+MIDDLEWARE_CLASSES += [('rollbar.contrib.django.'
+                        'middleware.RollbarNotifierMiddleware')]
+
+ROLLBAR = {
+    'access_token': 'df66058b7a7d41d1965bba4a48b5eac0',
+    'environment': 'development' if DEBUG else 'production',
+    'branch': 'master',
+    'root': BASE_DIR,
+}
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
