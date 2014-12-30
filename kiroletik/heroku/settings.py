@@ -4,6 +4,8 @@ import dj_database_url
 
 from kiroletik.settings import * #noqa
 
+DEBUG = False
+
 SECRET_KEY = os.environ.get('SECRET_KEY', get_random_string(
     50, 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'))
 
