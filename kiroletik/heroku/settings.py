@@ -32,7 +32,7 @@ DEFAULT_FILE_STORAGE = 'herokuify.storage.S3BotoStorage'
 MEDIA_URL = os.path.join(AWS_S3_CUSTOM_DOMAIN, 'media/')
 
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
-COMPRESS_URL = 'https://' + os.path.join(AWS_S3_CUSTOM_DOMAIN, 'static/')
+COMPRESS_URL = 'https://' + AWS_S3_CUSTOM_DOMAIN
 COMPRESS_OFFLINE = True
 
 
