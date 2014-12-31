@@ -7,7 +7,7 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport, MatchResult, Season, Competition
+from .models import News, Sport, Match, Season, Competition
 
 
 class SportTestCase(TestCase):
@@ -143,7 +143,7 @@ class NewsDetailTestCase(TestCase):
 
 class MatchListTestCase(TestCase):
     def setUp(self):
-        self.matches = mommy.make(MatchResult, _quantity=20)
+        self.matches = mommy.make(Match, _quantity=20)
         self.url = reverse('match-list')
 
     def test_ok(self):
@@ -161,7 +161,7 @@ class MatchListTestCase(TestCase):
         self.assertIn('matches', response.context)
 
     def test_order(self):
-        matches = list(MatchResult.objects.order_by('-date')[:10])
+        matches = list(Match.objects.order_by('-date')[:10])
         ctx = self.client.get(self.url).context
         self.assertEqual(list(ctx['matches']), matches)
 
