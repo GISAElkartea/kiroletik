@@ -20,14 +20,23 @@ DATABASES['default'] = dj_database_url.config()
 
 INSTALLED_APPS += ['storages']
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_HOST = 's3.us.archive.org'
 AWS_S3_USE_SSL = False
 AWS_STORAGE_BUCKET_NAME = 'kiroletik'
 AWS_AUTO_CREATE_BUCKET = True
 AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
-AWS_S3_SECURE_URLS = False
+AWS_S3_SECURE_URLS = True
 AWS_S3_CUSTOM_DOMAIN = '{}.s3.us.archive.org'.format(AWS_STORAGE_BUCKET_NAME)
+
+DEFAULT_FILE_STORAGE = 'herokuify.storage.S3BotoStorage'
+MEDIA_URL = os.path.join(AWS_S3_CUSTOM_DOMAIN, 'media')
+
+STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
+STATIC_URL = os.path.join(AWS_S3_CUSTOM_DOMAIN, 'static')
+
+COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
+COMPRESS_OFFLINE = True
+
 
 #####################
 # Security settings #

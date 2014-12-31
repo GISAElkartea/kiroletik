@@ -7,4 +7,6 @@ django-bmemcached
 django-redis-sessions
 boto
 -e hg+https://bitbucket.org/david/django-storages#egg=storages
+django-herokuify
+pylibmc
 rollbar
