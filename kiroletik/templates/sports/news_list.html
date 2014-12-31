@@ -22,7 +22,7 @@
   {# The first news will always be the highlighted one #}
   {% if forloop.first %}
   {% endif %}
-  <p class="date">{{ news.date }}</p>
+  <p class="date">{{ news.published }}</p>
   {% if news.sport %}
   <div class="sport">
       {% if news.sport.image %}
@@ -31,7 +31,7 @@
       <h3>{{ news.sport }}</h3>
   </div>
   {% endif %}
-  <a href="{{ news.get_absolute_url }}">{{ news }}</a>
+  <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
   {{ news.match }}
   {% endif %}
