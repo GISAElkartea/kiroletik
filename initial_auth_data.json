@@ -1,171 +1,12 @@
 [
 {
     "fields": {
-        "model": "logentry",
-        "name": "log entry",
-        "app_label": "admin"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 1
-},
-{
-    "fields": {
-        "model": "permission",
-        "name": "permission",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 2
-},
-{
-    "fields": {
-        "model": "group",
-        "name": "group",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 3
-},
-{
-    "fields": {
-        "model": "user",
-        "name": "user",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 4
-},
-{
-    "fields": {
-        "model": "contenttype",
-        "name": "content type",
-        "app_label": "contenttypes"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 5
-},
-{
-    "fields": {
-        "model": "session",
-        "name": "session",
-        "app_label": "sessions"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 6
-},
-{
-    "fields": {
-        "model": "flatpage",
-        "name": "Flatpage",
-        "app_label": "flatpages"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 7
-},
-{
-    "fields": {
-        "model": "banner",
-        "name": "Banner",
-        "app_label": "banners"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 8
-},
-{
-    "fields": {
-        "model": "sport",
-        "name": "Sport",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 9
-},
-{
-    "fields": {
-        "model": "town",
-        "name": "Town",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 10
-},
-{
-    "fields": {
-        "model": "championship",
-        "name": "Championship",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 11
-},
-{
-    "fields": {
-        "model": "season",
-        "name": "Season",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 12
-},
-{
-    "fields": {
-        "model": "team",
-        "name": "Team",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 13
-},
-{
-    "fields": {
-        "model": "teamclassification",
-        "name": "Team classification",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 14
-},
-{
-    "fields": {
-        "model": "match",
-        "name": "Match",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 15
-},
-{
-    "fields": {
-        "model": "teamresult",
-        "name": "Team result",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 16
-},
-{
-    "fields": {
-        "model": "news",
-        "name": "News",
-        "app_label": "sports"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 17
-},
-{
-    "fields": {
-        "model": "widget",
-        "name": "Widget",
-        "app_label": "widgets"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 18
-},
-{
-    "fields": {
         "codename": "add_logentry",
         "name": "Can add log entry",
-        "content_type": 1
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
     "model": "auth.permission",
     "pk": 1
@@ -174,7 +15,10 @@
     "fields": {
         "codename": "change_logentry",
         "name": "Can change log entry",
-        "content_type": 1
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
     "model": "auth.permission",
     "pk": 2
@@ -183,7 +27,10 @@
     "fields": {
         "codename": "delete_logentry",
         "name": "Can delete log entry",
-        "content_type": 1
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
     "model": "auth.permission",
     "pk": 3
@@ -192,7 +39,10 @@
     "fields": {
         "codename": "add_permission",
         "name": "Can add permission",
-        "content_type": 2
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
     "model": "auth.permission",
     "pk": 4
@@ -201,7 +51,10 @@
     "fields": {
         "codename": "change_permission",
         "name": "Can change permission",
-        "content_type": 2
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
     "model": "auth.permission",
     "pk": 5
@@ -210,7 +63,10 @@
     "fields": {
         "codename": "delete_permission",
         "name": "Can delete permission",
-        "content_type": 2
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
     "model": "auth.permission",
     "pk": 6
@@ -219,7 +75,10 @@
     "fields": {
         "codename": "add_group",
         "name": "Can add group",
-        "content_type": 3
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
     "model": "auth.permission",
     "pk": 7
@@ -228,7 +87,10 @@
     "fields": {
         "codename": "change_group",
         "name": "Can change group",
-        "content_type": 3
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
     "model": "auth.permission",
     "pk": 8
@@ -237,7 +99,10 @@
     "fields": {
         "codename": "delete_group",
         "name": "Can delete group",
-        "content_type": 3
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
     "model": "auth.permission",
     "pk": 9
@@ -246,7 +111,10 @@
     "fields": {
         "codename": "add_user",
         "name": "Can add user",
-        "content_type": 4
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
     "model": "auth.permission",
     "pk": 10
@@ -255,7 +123,10 @@
     "fields": {
         "codename": "change_user",
         "name": "Can change user",
-        "content_type": 4
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
     "model": "auth.permission",
     "pk": 11
@@ -264,7 +135,10 @@
     "fields": {
         "codename": "delete_user",
         "name": "Can delete user",
-        "content_type": 4
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
     "model": "auth.permission",
     "pk": 12
@@ -273,7 +147,10 @@
     "fields": {
         "codename": "add_contenttype",
         "name": "Can add content type",
-        "content_type": 5
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
     "model": "auth.permission",
     "pk": 13
@@ -282,7 +159,10 @@
     "fields": {
         "codename": "change_contenttype",
         "name": "Can change content type",
-        "content_type": 5
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
     "model": "auth.permission",
     "pk": 14
@@ -291,7 +171,10 @@
     "fields": {
         "codename": "delete_contenttype",
         "name": "Can delete content type",
-        "content_type": 5
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
     "model": "auth.permission",
     "pk": 15
@@ -300,7 +183,10 @@
     "fields": {
         "codename": "add_session",
         "name": "Can add session",
-        "content_type": 6
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
     "model": "auth.permission",
     "pk": 16
@@ -309,7 +195,10 @@
     "fields": {
         "codename": "change_session",
         "name": "Can change session",
-        "content_type": 6
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
     "model": "auth.permission",
     "pk": 17
@@ -318,7 +207,10 @@
     "fields": {
         "codename": "delete_session",
         "name": "Can delete session",
-        "content_type": 6
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
     "model": "auth.permission",
     "pk": 18
@@ -327,7 +219,10 @@
     "fields": {
         "codename": "add_flatpage",
         "name": "Can add Flatpage",
-        "content_type": 7
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
     },
     "model": "auth.permission",
     "pk": 19
@@ -336,7 +231,10 @@
     "fields": {
         "codename": "change_flatpage",
         "name": "Can change Flatpage",
-        "content_type": 7
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
     },
     "model": "auth.permission",
     "pk": 20
@@ -345,7 +243,10 @@
     "fields": {
         "codename": "delete_flatpage",
         "name": "Can delete Flatpage",
-        "content_type": 7
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
     },
     "model": "auth.permission",
     "pk": 21
@@ -354,7 +255,10 @@
     "fields": {
         "codename": "add_banner",
         "name": "Can add Banner",
-        "content_type": 8
+        "content_type": [
+            "banners",
+            "banner"
+        ]
     },
     "model": "auth.permission",
     "pk": 22
@@ -363,7 +267,10 @@
     "fields": {
         "codename": "change_banner",
         "name": "Can change Banner",
-        "content_type": 8
+        "content_type": [
+            "banners",
+            "banner"
+        ]
     },
     "model": "auth.permission",
     "pk": 23
@@ -372,7 +279,10 @@
     "fields": {
         "codename": "delete_banner",
         "name": "Can delete Banner",
-        "content_type": 8
+        "content_type": [
+            "banners",
+            "banner"
+        ]
     },
     "model": "auth.permission",
     "pk": 24
@@ -381,7 +291,10 @@
     "fields": {
         "codename": "add_sport",
         "name": "Can add Sport",
-        "content_type": 9
+        "content_type": [
+            "sports",
+            "sport"
+        ]
     },
     "model": "auth.permission",
     "pk": 25
@@ -390,7 +303,10 @@
     "fields": {
         "codename": "change_sport",
         "name": "Can change Sport",
-        "content_type": 9
+        "content_type": [
+            "sports",
+            "sport"
+        ]
     },
     "model": "auth.permission",
     "pk": 26
@@ -399,7 +315,10 @@
     "fields": {
         "codename": "delete_sport",
         "name": "Can delete Sport",
-        "content_type": 9
+        "content_type": [
+            "sports",
+            "sport"
+        ]
     },
     "model": "auth.permission",
     "pk": 27
@@ -408,7 +327,10 @@
     "fields": {
         "codename": "add_town",
         "name": "Can add Town",
-        "content_type": 10
+        "content_type": [
+            "sports",
+            "town"
+        ]
     },
     "model": "auth.permission",
     "pk": 28
@@ -417,7 +339,10 @@
     "fields": {
         "codename": "change_town",
         "name": "Can change Town",
-        "content_type": 10
+        "content_type": [
+            "sports",
+            "town"
+        ]
     },
     "model": "auth.permission",
     "pk": 29
@@ -426,7 +351,10 @@
     "fields": {
         "codename": "delete_town",
         "name": "Can delete Town",
-        "content_type": 10
+        "content_type": [
+            "sports",
+            "town"
+        ]
     },
     "model": "auth.permission",
     "pk": 30
@@ -435,7 +363,10 @@
     "fields": {
         "codename": "add_championship",
         "name": "Can add Championship",
-        "content_type": 11
+        "content_type": [
+            "sports",
+            "championship"
+        ]
     },
     "model": "auth.permission",
     "pk": 31
@@ -444,7 +375,10 @@
     "fields": {
         "codename": "change_championship",
         "name": "Can change Championship",
-        "content_type": 11
+        "content_type": [
+            "sports",
+            "championship"
+        ]
     },
     "model": "auth.permission",
     "pk": 32
@@ -453,7 +387,10 @@
     "fields": {
         "codename": "delete_championship",
         "name": "Can delete Championship",
-        "content_type": 11
+        "content_type": [
+            "sports",
+            "championship"
+        ]
     },
     "model": "auth.permission",
     "pk": 33
@@ -462,7 +399,10 @@
     "fields": {
         "codename": "add_season",
         "name": "Can add Season",
-        "content_type": 12
+        "content_type": [
+            "sports",
+            "season"
+        ]
     },
     "model": "auth.permission",
     "pk": 34
@@ -471,7 +411,10 @@
     "fields": {
         "codename": "change_season",
         "name": "Can change Season",
-        "content_type": 12
+        "content_type": [
+            "sports",
+            "season"
+        ]
     },
     "model": "auth.permission",
     "pk": 35
@@ -480,7 +423,10 @@
     "fields": {
         "codename": "delete_season",
         "name": "Can delete Season",
-        "content_type": 12
+        "content_type": [
+            "sports",
+            "season"
+        ]
     },
     "model": "auth.permission",
     "pk": 36
@@ -489,7 +435,10 @@
     "fields": {
         "codename": "add_team",
         "name": "Can add Team",
-        "content_type": 13
+        "content_type": [
+            "sports",
+            "team"
+        ]
     },
     "model": "auth.permission",
     "pk": 37
@@ -498,7 +447,10 @@
     "fields": {
         "codename": "change_team",
         "name": "Can change Team",
-        "content_type": 13
+        "content_type": [
+            "sports",
+            "team"
+        ]
     },
     "model": "auth.permission",
     "pk": 38
@@ -507,7 +459,10 @@
     "fields": {
         "codename": "delete_team",
         "name": "Can delete Team",
-        "content_type": 13
+        "content_type": [
+            "sports",
+            "team"
+        ]
     },
     "model": "auth.permission",
     "pk": 39
@@ -516,7 +471,10 @@
     "fields": {
         "codename": "add_teamclassification",
         "name": "Can add Team classification",
-        "content_type": 14
+        "content_type": [
+            "sports",
+            "teamclassification"
+        ]
     },
     "model": "auth.permission",
     "pk": 40
@@ -525,7 +483,10 @@
     "fields": {
         "codename": "change_teamclassification",
         "name": "Can change Team classification",
-        "content_type": 14
+        "content_type": [
+            "sports",
+            "teamclassification"
+        ]
     },
     "model": "auth.permission",
     "pk": 41
@@ -534,7 +495,10 @@
     "fields": {
         "codename": "delete_teamclassification",
         "name": "Can delete Team classification",
-        "content_type": 14
+        "content_type": [
+            "sports",
+            "teamclassification"
+        ]
     },
     "model": "auth.permission",
     "pk": 42
@@ -543,7 +507,10 @@
     "fields": {
         "codename": "add_match",
         "name": "Can add Match",
-        "content_type": 15
+        "content_type": [
+            "sports",
+            "match"
+        ]
     },
     "model": "auth.permission",
     "pk": 43
@@ -552,7 +519,10 @@
     "fields": {
         "codename": "change_match",
         "name": "Can change Match",
-        "content_type": 15
+        "content_type": [
+            "sports",
+            "match"
+        ]
     },
     "model": "auth.permission",
     "pk": 44
@@ -561,7 +531,10 @@
     "fields": {
         "codename": "delete_match",
         "name": "Can delete Match",
-        "content_type": 15
+        "content_type": [
+            "sports",
+            "match"
+        ]
     },
     "model": "auth.permission",
     "pk": 45
@@ -570,7 +543,10 @@
     "fields": {
         "codename": "add_teamresult",
         "name": "Can add Team result",
-        "content_type": 16
+        "content_type": [
+            "sports",
+            "teamresult"
+        ]
     },
     "model": "auth.permission",
     "pk": 46
@@ -579,7 +555,10 @@
     "fields": {
         "codename": "change_teamresult",
         "name": "Can change Team result",
-        "content_type": 16
+        "content_type": [
+            "sports",
+            "teamresult"
+        ]
     },
     "model": "auth.permission",
     "pk": 47
@@ -588,7 +567,10 @@
     "fields": {
         "codename": "delete_teamresult",
         "name": "Can delete Team result",
-        "content_type": 16
+        "content_type": [
+            "sports",
+            "teamresult"
+        ]
     },
     "model": "auth.permission",
     "pk": 48
@@ -597,7 +579,10 @@
     "fields": {
         "codename": "add_news",
         "name": "Can add News",
-        "content_type": 17
+        "content_type": [
+            "sports",
+            "news"
+        ]
     },
     "model": "auth.permission",
     "pk": 49
@@ -606,7 +591,10 @@
     "fields": {
         "codename": "change_news",
         "name": "Can change News",
-        "content_type": 17
+        "content_type": [
+            "sports",
+            "news"
+        ]
     },
     "model": "auth.permission",
     "pk": 50
@@ -615,7 +603,10 @@
     "fields": {
         "codename": "delete_news",
         "name": "Can delete News",
-        "content_type": 17
+        "content_type": [
+            "sports",
+            "news"
+        ]
     },
     "model": "auth.permission",
     "pk": 51
@@ -624,7 +615,10 @@
     "fields": {
         "codename": "add_widget",
         "name": "Can add Widget",
-        "content_type": 18
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
     },
     "model": "auth.permission",
     "pk": 52
@@ -633,7 +627,10 @@
     "fields": {
         "codename": "change_widget",
         "name": "Can change Widget",
-        "content_type": 18
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
     },
     "model": "auth.permission",
     "pk": 53
@@ -642,7 +639,10 @@
     "fields": {
         "codename": "delete_widget",
         "name": "Can delete Widget",
-        "content_type": 18
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
     },
     "model": "auth.permission",
     "pk": 54
@@ -676,42 +676,186 @@
         "last_login": "2014-12-31T10:44:31Z",
         "groups": [],
         "user_permissions": [
-            22,
-            23,
-            24,
-            19,
-            20,
-            21,
-            31,
-            32,
-            33,
-            43,
-            44,
-            45,
-            49,
-            50,
-            51,
-            34,
-            35,
-            36,
-            25,
-            26,
-            27,
-            37,
-            38,
-            39,
-            40,
-            41,
-            42,
-            46,
-            47,
-            48,
-            28,
-            29,
-            30,
-            52,
-            53,
-            54
+            [
+                "add_banner",
+                "banners",
+                "banner"
+            ],
+            [
+                "change_banner",
+                "banners",
+                "banner"
+            ],
+            [
+                "delete_banner",
+                "banners",
+                "banner"
+            ],
+            [
+                "add_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "change_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "delete_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "add_championship",
+                "sports",
+                "championship"
+            ],
+            [
+                "change_championship",
+                "sports",
+                "championship"
+            ],
+            [
+                "delete_championship",
+                "sports",
+                "championship"
+            ],
+            [
+                "add_match",
+                "sports",
+                "match"
+            ],
+            [
+                "change_match",
+                "sports",
+                "match"
+            ],
+            [
+                "delete_match",
+                "sports",
+                "match"
+            ],
+            [
+                "add_news",
+                "sports",
+                "news"
+            ],
+            [
+                "change_news",
+                "sports",
+                "news"
+            ],
+            [
+                "delete_news",
+                "sports",
+                "news"
+            ],
+            [
+                "add_season",
+                "sports",
+                "season"
+            ],
+            [
+                "change_season",
+                "sports",
+                "season"
+            ],
+            [
+                "delete_season",
+                "sports",
+                "season"
+            ],
+            [
+                "add_sport",
+                "sports",
+                "sport"
+            ],
+            [
+                "change_sport",
+                "sports",
+                "sport"
+            ],
+            [
+                "delete_sport",
+                "sports",
+                "sport"
+            ],
+            [
+                "add_team",
+                "sports",
+                "team"
+            ],
+            [
+                "change_team",
+                "sports",
+                "team"
+            ],
+            [
+                "delete_team",
+                "sports",
+                "team"
+            ],
+            [
+                "add_teamclassification",
+                "sports",
+                "teamclassification"
+            ],
+            [
+                "change_teamclassification",
+                "sports",
+                "teamclassification"
+            ],
+            [
+                "delete_teamclassification",
+                "sports",
+                "teamclassification"
+            ],
+            [
+                "add_teamresult",
+                "sports",
+                "teamresult"
+            ],
+            [
+                "change_teamresult",
+                "sports",
+                "teamresult"
+            ],
+            [
+                "delete_teamresult",
+                "sports",
+                "teamresult"
+            ],
+            [
+                "add_town",
+                "sports",
+                "town"
+            ],
+            [
+                "change_town",
+                "sports",
+                "town"
+            ],
+            [
+                "delete_town",
+                "sports",
+                "town"
+            ],
+            [
+                "add_widget",
+                "widgets",
+                "widget"
+            ],
+            [
+                "change_widget",
+                "widgets",
+                "widget"
+            ],
+            [
+                "delete_widget",
+                "widgets",
+                "widget"
+            ]
         ],
         "password": "pbkdf2_sha256$12000$UmWVlXifActx$XnwU7y2IqsWrVIPlP2XauuDelwGgSO8ChbG++mm1Gcg=",
         "email": "",
