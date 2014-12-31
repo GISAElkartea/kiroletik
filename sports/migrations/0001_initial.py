@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Competition',
+            name='Championship',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=150, verbose_name='name')),
@@ -22,8 +22,8 @@ class Migration(migrations.Migration):
                 ('slug', autoslug.fields.AutoSlugField(unique=True, editable=False)),
             ],
             options={
-                'verbose_name': 'Competition',
-                'verbose_name_plural': 'Competitions',
+                'verbose_name': 'Championship',
+                'verbose_name_plural': 'Championships',
             },
             bases=(models.Model,),
         ),
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('date', models.DateField(verbose_name='date')),
                 ('name', models.CharField(max_length=150, verbose_name='name', blank=True)),
-                ('competition', models.ForeignKey(verbose_name='competition', to='sports.Competition')),
+                ('championship', models.ForeignKey(verbose_name='championship', to='sports.Championship')),
             ],
             options={
                 'ordering': ['-date'],
@@ -167,7 +167,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='season',
-            unique_together=set([('competition', 'date')]),
+            unique_together=set([('championship', 'date')]),
         ),
         migrations.AddField(
             model_name='news',
@@ -182,13 +182,13 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AddField(
-            model_name='competition',
+            model_name='championship',
             name='sport',
             field=models.ForeignKey(verbose_name='sport', to='sports.Sport'),
             preserve_default=True,
         ),
         migrations.AlterUniqueTogether(
-            name='competition',
+            name='championship',
             unique_together=set([('name', 'sport')]),
         ),
     ]

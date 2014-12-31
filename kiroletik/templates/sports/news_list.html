@@ -9,10 +9,10 @@
   {% if sport %}
   <h2>{{ sport }}</h2>
 
-  {% for competition in sport.competition_set.select_related %}
-  <a href="{{ competition.get_absolute_url }}">{{ competition }}</a>
+  {% for championship in sport.championship_set.select_related %}
+  <a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
 
-  {% for season in competition.season_set.select_related %}
+  {% for season in championship.season_set.select_related %}
   <a href="{{ season.get_absolute_url }}">{{ season }}</a>
   {% endfor %}
   {% endfor %}

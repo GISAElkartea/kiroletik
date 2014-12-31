@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from .models import (Sport, Town, Competition, Season, Team, TeamClassification,
-                     Match, TeamResult, News)
+from .models import (Sport, Town, Championship, Season, Team,
+                     TeamClassification, Match, TeamResult, News)
 
 
 admin.site.register(Town)
@@ -25,9 +25,9 @@ class SportAdmin(admin.ModelAdmin):
 admin.site.register(Sport, SportAdmin)
 
 
-class CompetitionAdmin(admin.ModelAdmin):
+class ChampionshipAdmin(admin.ModelAdmin):
     fields = ('name', 'sport', 'description')
-admin.site.register(Competition, CompetitionAdmin)
+admin.site.register(Championship, ChampionshipAdmin)
 
 
 class TeamClassificationInline(admin.TabularInline):
@@ -38,9 +38,9 @@ class TeamClassificationInline(admin.TabularInline):
 
 class SeasonAdmin(admin.ModelAdmin):
     inlines = [TeamClassificationInline]
-    fields = ('competition', 'date', 'name')
-    list_display = ('date', 'competition', 'name')
-    list_filter = ('competition', 'date')
+    fields = ('championship', 'date', 'name')
+    list_display = ('date', 'championship', 'name')
+    list_filter = ('championship', 'date')
     date_hierarchy = 'date'
     search_fields = ('name',)
 admin.site.register(Season, SeasonAdmin)

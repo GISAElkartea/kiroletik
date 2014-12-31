@@ -48,7 +48,7 @@ class MatchList(ListView):
 
 class SeasonDetail(DetailView, YearMixin, MonthMixin, DayMixin):
     model = Season
-    slug_field = 'competition__slug'
+    slug_field = 'championship__slug'
     month_format = '%m'
     context_object_name = 'season'
     template_name = 'sports/season_detail.html'

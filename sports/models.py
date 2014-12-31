@@ -48,11 +48,11 @@ class Town(models.Model):
         return self.name
 
 
-class Competition(models.Model):
+class Championship(models.Model):
     class Meta:
         unique_together = ('name', 'sport')
-        verbose_name = _('Competition')
-        verbose_name_plural = _('Competitions')
+        verbose_name = _('Championship')
+        verbose_name_plural = _('Championships')
 
     name = models.CharField(max_length=150, verbose_name=_('name'))
     sport = models.ForeignKey(Sport, verbose_name=_('sport'))
@@ -73,11 +73,12 @@ class Competition(models.Model):
 class Season(models.Model):
     class Meta:
         ordering = ['-date']
-        unique_together = ('competition', 'date')
+        unique_together = ('championship', 'date')
         verbose_name = _('Season')
         verbose_name_plural = _('Seasons')
 
-    competition = models.ForeignKey(Competition, verbose_name=_('competition'))
+    championship = models.ForeignKey(Championship,
+                                     verbose_name=_('championship'))
     date = models.DateField(verbose_name=_('date'))
     name = models.CharField(max_length=150, blank=True,
                             verbose_name=_('name'))
@@ -87,18 +88,18 @@ class Season(models.Model):
 
     def get_absolute_url(self):
         return reverse('season-detail', kwargs={
-            'slug': self.competition.slug,
+            'slug': self.championship.slug,
             'year': '{:04d}'.format(self.date.year),
             'month': '{:02d}'.format(self.date.month),
             'day': '{:02d}'.format(self.date.day)})
 
     def next(self):
-        next = Season.objects.filter(competition=self.competition,
+        next = Season.objects.filter(championship=self.championship,
                                      date__gt=self.date)
         return next.last()
 
     def previous(self):
-        previous = Season.objects.filter(competition=self.competition,
+        previous = Season.objects.filter(championship=self.championship,
                                          date__lt=self.date)
         return previous.first()
 

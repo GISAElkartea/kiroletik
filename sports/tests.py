@@ -7,27 +7,27 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport, Match, Season, Competition
+from .models import News, Sport, Match, Season, Championship
 
 
 class SportTestCase(TestCase):
     def setUp(self):
         today = date.today()
-        self.competition = mommy.make(Competition)
-        self.alpha = mommy.make(Season, competition=self.competition,
+        self.championship = mommy.make(Championship)
+        self.alpha = mommy.make(Season, championship=self.championship,
                                 date=(today + timedelta(days=1)))
-        self.beta = mommy.make(Season, competition=self.competition,
+        self.beta = mommy.make(Season, championship=self.championship,
                                date=(today + timedelta(days=2)))
-        self.gamme = mommy.make(Season, competition=self.competition,
+        self.gamme = mommy.make(Season, championship=self.championship,
                                 date=(today + timedelta(days=3)))
-        self.delta = mommy.make(Season, competition=self.competition,
+        self.delta = mommy.make(Season, championship=self.championship,
                                 date=(today + timedelta(days=4)))
-        self.epsilon = mommy.make(Season, competition=self.competition,
+        self.epsilon = mommy.make(Season, championship=self.championship,
                                   date=(today + timedelta(days=5)))
 
-    def test_not_same_date_and_competition(self):
+    def test_not_same_date_and_championship(self):
         with self.assertRaises(IntegrityError):
-            mommy.make(Season, competition=self.competition,
+            mommy.make(Season, championship=self.championship,
                        date=self.alpha.date)
 
     def test_next_present(self):
