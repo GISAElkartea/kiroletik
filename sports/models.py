@@ -141,29 +141,36 @@ class TeamClassification(models.Model):
         return '{s.team} {s.points} points at {s.season}'.format(s=self)
 
 
-class MatchResult(models.Model):
+class Match(models.Model):
     class Meta:
-        unique_together = ('team_foo', 'team_bar', 'date')
         ordering = ('-date',)
-        verbose_name = _('Match result')
-        verbose_name_plural = _('Match results')
-
-    team_foo = models.ForeignKey(Team, related_name='+',
-                                 verbose_name=_('First team'))
-    team_bar = models.ForeignKey(Team, related_name='+',
-                                 verbose_name=_('Second team'))
-    foo_points = models.PositiveIntegerField(
-        verbose_name=_('Points for first team'))
-    bar_points = models.PositiveIntegerField(
-        verbose_name=_('Points for second team'))
+        verbose_name = _('Match')
+        verbose_name_plural = _('Match')
 
     date = models.DateField(verbose_name=_('date'))
     season = models.ForeignKey(Season, blank=True, null=True,
                                verbose_name=_('season'))
 
+    def is_antagonistic(self):
+        return self.teamresult_set.count() == 2
+
     def __unicode__(self):
-        return ('{s.team_foo}: {s.foo_points} - '
-                '{s.team_bar}: {s.bar_points}').format(s=self)
+        return str(self.date)
+
+
+class TeamResult(models.Model):
+    class Meta:
+        ordering = ['-points']
+        unique_together = ('team', 'match')
+        verbose_name = _('Team result')
+        verbose_name_plural = _('Team results')
+
+    team = models.ForeignKey(Team, verbose_name=_('team'))
+    points = models.PositiveIntegerField(verbose_name=_('points'))
+    match = models.ForeignKey(Match, verbose_name=_('match'))
+
+    def __unicode__(self):
+        return '{s.team} {s.points} points at {s.match}'.format(s=self)
 
 
 class NewsQuerySet(models.QuerySet):
@@ -187,7 +194,7 @@ class News(models.Model):
                                       verbose_name=_('highlighted'))
     sport = models.ForeignKey(Sport, null=True, blank=True,
                               verbose_name=_('sport'))
-    match = models.ForeignKey(MatchResult, null=True, blank=True,
+    match = models.ForeignKey(Match, null=True, blank=True,
                               verbose_name=_('match'))
 
     title = models.CharField(max_length=200, verbose_name=_('title'))

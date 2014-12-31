@@ -4,7 +4,7 @@ from django.views.generic.dates import ArchiveIndexView, DateDetailView
 from django.views.generic.dates import YearMixin, MonthMixin, DayMixin
 from django.shortcuts import get_object_or_404
 
-from .models import News, Sport, MatchResult, Season
+from .models import News, Sport, Match, Season
 
 
 class NewsMixin(object):
@@ -39,7 +39,7 @@ class NewsDetail(NewsMixin, DateDetailView):
 
 
 class MatchList(ListView):
-    model = MatchResult
+    model = Match
     allow_empty = True
     paginate_by = 10
     context_object_name = 'matches'
