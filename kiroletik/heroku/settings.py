@@ -29,11 +29,7 @@ AWS_S3_SECURE_URLS = True
 AWS_S3_CUSTOM_DOMAIN = '{}.s3.us.archive.org'.format(AWS_STORAGE_BUCKET_NAME)
 
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3BotoStorage'
-MEDIA_URL = 'https://' + os.path.join(AWS_S3_CUSTOM_DOMAIN, 'media/')
-
 STATICFILES_STORAGE = "herokuify.storage.CachedS3StaticStorage"
-STATIC_URL = 'https://' + os.path.join(AWS_S3_CUSTOM_DOMAIN, 'static/')
-
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_OFFLINE = True
 
