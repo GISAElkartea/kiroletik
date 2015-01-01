@@ -1,16 +1,27 @@
 article.news
-    p.date
-        font-size: .7rem
-    div.sport img, div.sport h3, p.date
+    p.date, img.sport, h3.sport
         display: inline-block
         vertical-align: middle
-    div.sport
-        img
-            width: 3%
-            background: $orange
-        h3
-            color: $orange
+        margin-right: 1em
+    p.date
+        font-size: .7rem
+    img.sport
+        width: 3%
+        background: $orange
+    h3.sport
+        color: $orange
+        font-size: 1rem
     h1
         a
             text-decoration: none
+
+article.news:first-child
+    p.date1
+        font-size: .9rem
+    img.sport
+        width: 5%
+    h3.sport
+        font-size: 1rem
+    h1
+        font-size: 1.5rem
 
