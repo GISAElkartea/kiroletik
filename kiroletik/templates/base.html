@@ -9,6 +9,7 @@
     <meta name="keywords" content="kiroletik, kirola, behe bidasoa, txingudi,
     euskara">
     <meta name="author" content="Unai Oiartzun Irastorza">
+    <link rel="shortcut icon" href="/media/images/favicon.png" />
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="/static/css/main.sass" />
     {% endcompress %}
@@ -16,12 +17,10 @@
   </head>
   <body>
     <header>
-      <a href="/">
-        <hgroup>
-          <h1>Kiroletik</h1>
-          <h2>Behe Bidasoako kirola</h2>
-        </hgroup>
-      </a>
+      <hgroup>
+        <h1><a href="/">Kiroletik</a></h1>
+        <h2><a href="/">Behe Bidasoako kirola</a></h2>
+      </hgroup>
       <nav>
         <ul id="mainNav">
           {% for sport in sports.on_menu %}
