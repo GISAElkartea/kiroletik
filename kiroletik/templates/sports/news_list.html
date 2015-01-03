@@ -30,15 +30,14 @@
   {% endif %}
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
+  {% if news.match %}
   <ul class="match_result {% if news.match.is_antagonistic %}antagonistic{% endif %}">
     {% for team_result in news.match.teamresult_set.select_related %}
     <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
     {% endfor %}
   </ul>
-  {% if news.match %}
-  <p>{{ news.match }}</p>
+  {% endif %}
 </article>
-{% endif %}
 {% endfor %}
 
 {% include 'pagination.html' with page_obj=page_obj only %}
