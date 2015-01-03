@@ -3,14 +3,8 @@
 
 {% block title %}{% if sport %}{{ sport }}{% else %}{% trans 'Latest News' %}{% endif %}{% endblock title %}
 
-{% block content %}
-
+{% block aside %}
 {% if sport %}
-{% if sport.image %}
-<img class="sport_type_icon" src="{{ sport.image.url }}" />
-{% endif %}
-<h1 class="sport_type">{{ sport }}</h1>
-
 <h2 class="championship_title">{% trans 'Matches' %}</h2>
 <ul class="championships">
   {% for championship in sport.championship_set.select_related %}
@@ -23,8 +17,19 @@
     </ul>
   </li>
   {% endfor %}
-{% endif %}
 </ul>
+{% else %}
+{{ block.super }}
+{% endif %}
+{% endblock aside %}
+
+{% block content %}
+{% if sport %}
+{% if sport.image %}
+<img class="sport_type_icon" src="{{ sport.image.url }}" />
+{% endif %}
+<h1 class="sport_type">{{ sport }}</h1>
+{% endif %}
 
 {% for news in news_list %}
 {# The first news will always be the highlighted one #}

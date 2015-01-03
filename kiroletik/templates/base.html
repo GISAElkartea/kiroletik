@@ -54,9 +54,11 @@
       </main>
 
       <aside>
+        {% block aside %}
         {% for widget in widgets %}
         {{ widget.content|safe }}
         {% endfor %}
+        {% endblock aside %}
       </aside>
     </div>
 
