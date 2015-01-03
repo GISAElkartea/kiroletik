@@ -4,38 +4,41 @@
 {% block title %}{{ season }}{% endblock title %}
 
 {% block content %}
-<h2>{{ season.championship }}</h2>
-<h3>{{ season }}</h3>
+<section class="matches">
+  <h1>{{ season.championship }}</h1>
+  <h2>{{ season }}</h2>
 
-<div class="pagination">
-  <span class="step-links">
-    {% if season.previous %}
-    <a href="{{ season.previous.get_absolute_url }}">{{ season.previous }}</a>
-    {% endif %}
-    {% if season.next %}
-    <a href="{{ season.next.get_absolute_url }}">{{ season.next }}</a>
-    {% endif %}
-  </span>
-</div>
+  <table>
+    <thead>
+      <tr>
+        <th>{% trans 'Position' %}</th>
+        <th>{% trans 'Team' %}</th>
+        <th>{% trans 'Points' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for team_classification in season.teamclassification_set.select_related %}
+      <tr>
+        <th class="match_points">{{ forloop.counter }}</th>
+        <th class="match_team">{{ team_classification.team }}</th>
+        <th class="match_points">{{ team_classification.points }}</th>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>{% trans 'Position' %}</th>
-      <th>{% trans 'Team' %}</th>
-      <th>{% trans 'Points' %}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for team_classification in season.teamclassification_set.select_related %}
-    <tr>
-      <th>{{ forloop.counter }}</th>
-      <th>{{ team_classification.team }}</th>
-      <th>{{ team_classification.points }}</th>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+  <div class="pagination">
+    <span class="step-links">
+      {% if season.previous %}
+      <a class="previous" href="{{ season.previous.get_absolute_url }}">{{ season.previous }}&gt</a>
+      {% endif %}
+      {% if season.next %}
+      <a class="next" href="{{ season.next.get_absolute_url }}">&lt{{ season.next }}</a>
+      {% endif %}
+    </span>
+  </div>
+
+</section>
 
 {% for match_result in season.matchresult_set.select_related %}
 {{ match_result }}
