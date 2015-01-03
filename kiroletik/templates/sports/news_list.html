@@ -5,36 +5,41 @@
 
 {% block content %}
 
+{% if sport %}
+<h2>{{ sport }}</h2>
+
+{% for championship in sport.championship_set.select_related %}
+<a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
+
+{% for season in championship.season_set.select_related %}
+<a href="{{ season.get_absolute_url }}">{{ season }}</a>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+{% for news in news_list %}
+{# The first news will always be the highlighted one #}
+{% if forloop.first %}
+{% endif %}
 <article class="news">
-  {% if sport %}
-  <h2>{{ sport }}</h2>
-
-  {% for championship in sport.championship_set.select_related %}
-  <a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
-
-  {% for season in championship.season_set.select_related %}
-  <a href="{{ season.get_absolute_url }}">{{ season }}</a>
-  {% endfor %}
-  {% endfor %}
-  {% endif %}
-
-  {% for news in news_list %}
-  {# The first news will always be the highlighted one #}
-  {% if forloop.first %}
-  {% endif %}
   {% if news.sport %}
+  <p class="date">{{ news.published|date:"Y-m-d" }}</p>
+  <h3 class="sport">{{ news.sport }}</h3>
   {% if news.sport.image %}
   <img class="sport" src="{{ news.sport.image.url }}" />
   {% endif %}
-  <h3 class="sport">{{ news.sport }}</h3>
   {% endif %}
-  <p class="date">{{ news.published }}</p>
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
+  <ul class="match_result {% if news.match.is_antagonistic %}antagonistic{% endif %}">
+    {% for team_result in news.match.teamresult_set.select_related %}
+    <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
+    {% endfor %}
+  </ul>
   {% if news.match %}
   <p>{{ news.match }}</p>
-  {% endif %}
-  {% endfor %}
 </article>
+{% endif %}
+{% endfor %}
 
 {% include 'pagination.html' with page_obj=page_obj only %}
 
