@@ -6,10 +6,10 @@
 {% block content %}
 <article class="news detail">
   {% if news.sport %}
-  <p class="date">{{ news.published|date:"Y-m-d" }}</p>
-  <h3 class="sport">{{ news.sport }}</h3>
+  <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
+  <h3 class="news_sport">{{ news.sport }}</h3>
   {% if news.sport.image %}
-  <img class="sport" src="{{ news.sport.image.url }}" />
+  <img class="sport_icon" src="{{ news.sport.image.url }}" />
   {% endif %}
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
