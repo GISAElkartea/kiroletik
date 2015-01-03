@@ -37,6 +37,11 @@
     {% endfor %}
   </ul>
   {% endif %}
+  {% if news.image %}
+  {% if news.match.is_antagonistic %}
+  <img src="{{ news.image.url }}"/>
+  {% endif %}
+  {% endif %}
   <p>Ion Areitiok ezin izan dio sailkapeneko bigarren postuari eutsi. Bosgarren
       tokian bukatu zuen igandean Munduko Kopako azken proba, Anberesen. Lau
       onenek jokatzen duten superfinaletik kanpo gelditu zen, denboraldi osoan
