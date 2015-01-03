@@ -84,7 +84,7 @@ class Season(models.Model):
                             verbose_name=_('name'))
 
     def __unicode__(self):
-        return str(self.date)
+        return self.name or str(self.date)
 
     def get_absolute_url(self):
         return reverse('season-detail', kwargs={
