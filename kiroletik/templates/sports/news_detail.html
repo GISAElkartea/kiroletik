@@ -4,5 +4,34 @@
 {% block title %}{{ news }}{% endblock title %}
 
 {% block content %}
-<h2>{{ news }}</h2>
+<article class="news detail">
+  {% if news.sport %}
+  <p class="date">{{ news.published|date:"Y-m-d" }}</p>
+  <h3 class="sport">{{ news.sport }}</h3>
+  {% if news.sport.image %}
+  <img class="sport" src="{{ news.sport.image.url }}" />
+  {% endif %}
+  {% endif %}
+  <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
+  {% if news.match %}
+  <ul class="match_result {% if news.match.is_antagonistic %}antagonistic{% endif %}">
+    {% for team_result in news.match.teamresult_set.select_related %}
+    <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <img src="{{ news.image.url }}"/>
+  <p>Ion Areitiok ezin izan dio sailkapeneko bigarren postuari eutsi. Bosgarren
+      tokian bukatu zuen igandean Munduko Kopako azken proba, Anberesen. Lau
+      onenek jokatzen duten superfinaletik kanpo gelditu zen, denboraldi osoan
+      lehen aldiz. Rick Koekoek holandarra aurretik izan zuenez, sailkapen
+      orokorrean hirugarren gelditu da Areitio azkenean. Abel Mustieles
+      aragoarra izan da txapeldun, Munduko Kopako bost probak irabazi
+      ondoren.</p>
+
+  <h2>Susperregiren proba onena</h2>
+  <p>Gorka Susperregi hondarribiarrak urteko probarik onena egin zuen Anberesen,
+      Munduko Kopari dagokionean. 23.gelditu zen azken proban. Sailkapen
+      orokorrean, 24.postua eskuratu du Susperregik.</p>
+</article>
 {% endblock content %}
