@@ -6,6 +6,9 @@
 {% block content %}
 
 {% if sport %}
+{% if sport.image %}
+<img class="sport_type_icon" src="{{ sport.image.url }}" />
+{% endif %}
 <h1 class="sport_type">{{ sport }}</h1>
 
 <h2 class="championship_title">{% trans 'Matches' %}</h2>

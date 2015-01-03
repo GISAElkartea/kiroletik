@@ -7,10 +7,10 @@
 <article class="news detail">
   {% if news.sport %}
   <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
-  <h3 class="news_sport">{{ news.sport }}</h3>
   {% if news.sport.image %}
   <img class="sport_icon" src="{{ news.sport.image.url }}" />
   {% endif %}
+  <h3 class="news_sport">{{ news.sport }}</h3>
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
@@ -20,7 +20,9 @@
     {% endfor %}
   </ul>
   {% endif %}
+  {% if news.image %}
   <img src="{{ news.image.url }}"/>
+  {% endif %}
   <p>Ion Areitiok ezin izan dio sailkapeneko bigarren postuari eutsi. Bosgarren
       tokian bukatu zuen igandean Munduko Kopako azken proba, Anberesen. Lau
       onenek jokatzen duten superfinaletik kanpo gelditu zen, denboraldi osoan
