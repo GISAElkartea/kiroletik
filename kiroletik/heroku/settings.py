@@ -25,7 +25,6 @@ AWS_S3_USE_SSL = False
 AWS_STORAGE_BUCKET_NAME = 'kiroletik'
 AWS_AUTO_CREATE_BUCKET = True
 AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
-AWS_S3_SECURE_URLS = True
 AWS_S3_CUSTOM_DOMAIN = 'https://{}.s3.us.archive.org'.format(
     AWS_STORAGE_BUCKET_NAME)
 
