@@ -27,7 +27,7 @@ AWS_AUTO_CREATE_BUCKET = True
 AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 AWS_S3_SECURE_URLS = True
 AWS_S3_URL_PROTOCOL = ''
-AWS_S3_CUSTOM_DOMAIN = 'https://ia802600.us.archive.org/8/items/kiroletik'
+AWS_S3_CUSTOM_DOMAIN = 'ia802600.us.archive.org/8/items/kiroletik'
 
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3BotoStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
