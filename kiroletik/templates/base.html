@@ -13,6 +13,10 @@
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="/static/css/main.sass" />
     {% endcompress %}
+    {% compress js %}
+    <script src="/static/bower_components/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/app.js" type="text/javascript" charset="utf-8"></script>
+    {% endcompress %}
     <title>{% block title %}Kiroletik{% endblock title %} | Kiroletik</title>
   </head>
   <body>
