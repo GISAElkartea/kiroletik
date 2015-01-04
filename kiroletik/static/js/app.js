@@ -4,15 +4,15 @@ function split_list(list) {
     var left = $('<ul class="left"></ul>'),
         right = $('<ul class="right"></ul>');
     left.append(elements.slice(0, split));
-    left.insertAfter(list);
     right.append(elements.slice(split));
     right.insertAfter(list);
+    left.insertAfter(list);
     list.remove();
 }
 
 $(function() {
     split_list($('ul#mainNav'));
-    $('#others').click(function(event)  {
+    $('#others > a').click(function(event)  {
         event.preventDefault();
         $('#subNav').toggle();
     });
