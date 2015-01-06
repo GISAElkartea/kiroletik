@@ -40,8 +40,8 @@
 
 </section>
 
-{% for match_result in season.matchresult_set.select_related %}
-{{ match_result }}
+{% for match in season.match_set.select_related %}
+{{ match }}
 {% endfor %}
 
 {% endblock content %}
