@@ -3,26 +3,6 @@
 
 {% block title %}{% if sport %}{{ sport }}{% else %}{% trans 'Latest News' %}{% endif %}{% endblock title %}
 
-{% block aside %}
-{% if sport %}
-<h2 class="championship_title">{% trans 'Matches' %}</h2>
-<ul class="championships">
-  {% for championship in sport.championship_set.select_related %}
-  <li>
-    <a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
-    <ul>
-      {% for season in championship.season_set.select_related %}
-      <li><a href="{{ season.get_absolute_url }}">{{ season }}</a></li>
-      {% endfor %}
-    </ul>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-{{ block.super }}
-{% endif %}
-{% endblock aside %}
-
 {% block content %}
 {% if sport %}
 {% if sport.image %}

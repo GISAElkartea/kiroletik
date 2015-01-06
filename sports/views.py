@@ -15,27 +15,35 @@ class NewsMixin(object):
     month_format = '%m'
 
 
+class SportMixin(object):
+    def get_context_data(self, *args, **kwargs):
+        ctx = super(SportMixin, self).get_context_data(*args, **kwargs)
+        ctx['sport'] = self.get_sport()
+        return ctx
+
+
 class NewsList(NewsMixin, ArchiveIndexView):
     paginate_by = 10
     context_object_name = 'news_list'
     template_name = 'sports/news_list.html'
 
 
-class SportNewsList(NewsList):
+class SportNewsList(SportMixin, NewsList):
     def get_queryset(self):
         self.sport = get_object_or_404(Sport, slug=self.kwargs['slug'])
         qs = super(SportNewsList, self).get_queryset()
         return qs.filter(sport=self.sport)
 
-    def get_context_data(self, *args, **kwargs):
-        ctx = super(SportNewsList, self).get_context_data(*args, **kwargs)
-        ctx['sport'] = self.sport
-        return ctx
+    def get_sport(self):
+        return self.sport
 
 
-class NewsDetail(NewsMixin, DateDetailView):
+class NewsDetail(NewsMixin, SportMixin, DateDetailView):
     context_object_name = 'news'
     template_name = 'sports/news_detail.html'
+
+    def get_sport(self):
+        return self.object.sport
 
 
 class MatchList(ListView):
@@ -46,7 +54,7 @@ class MatchList(ListView):
     template_name = 'sports/match_list.html'
 
 
-class SeasonDetail(DetailView, YearMixin, MonthMixin, DayMixin):
+class SeasonDetail(SportMixin, YearMixin, MonthMixin, DayMixin, DetailView):
     model = Season
     slug_field = 'championship__slug'
     month_format = '%m'
@@ -57,6 +65,9 @@ class SeasonDetail(DetailView, YearMixin, MonthMixin, DayMixin):
         return Season.objects.filter(date__year=self.get_year(),
                                      date__month=self.get_month(),
                                      date__day=self.get_day())
+
+    def get_sport(self):
+        return self.object.championship.sport
 
 
 news_list = NewsList.as_view()

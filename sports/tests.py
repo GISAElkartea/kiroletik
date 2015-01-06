@@ -140,6 +140,12 @@ class NewsDetailTestCase(TestCase):
         self.assertIn('news', ctx)
         self.assertEqual(ctx['news'], self.past_news)
 
+    def test_sport_context(self):
+        url = self.past_news.get_absolute_url()
+        ctx = self.client.get(url).context
+        self.assertIn('sport', ctx)
+        self.assertEqual(ctx['sport'], self.past_news.sport)
+
 
 class MatchListTestCase(TestCase):
     def setUp(self):
@@ -192,3 +198,8 @@ class SeasonDetailTestCase(TestCase):
         ctx = self.client.get(self.url).context
         self.assertIn('season', ctx)
         self.assertEqual(ctx['season'], self.season)
+
+    def test_sport_context(self):
+        ctx = self.client.get(self.url).context
+        self.assertIn('sport', ctx)
+        self.assertEqual(ctx['sport'], self.season.championship.sport)
