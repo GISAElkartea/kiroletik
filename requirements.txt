@@ -1,3 +1,3 @@
-# this magic comment installs mercurial :: hg+
+# heroku only installs mercurial if some hg+ is found inside this file :: hg+
 
 -r requirements/heroku.txt
