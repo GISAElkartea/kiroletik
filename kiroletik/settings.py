@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'banners',
     'sports',
     'widgets',
+    'kiroletik.heroku',
 ]
 
 MIDDLEWARE_CLASSES = [
