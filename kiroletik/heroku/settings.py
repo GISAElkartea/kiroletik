@@ -20,6 +20,7 @@ DATABASES['default'] = dj_database_url.config()
 INSTALLED_APPS += ['storages']
 
 AWS_STORAGE_BUCKET_NAME = 'kiroletik'
+AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
