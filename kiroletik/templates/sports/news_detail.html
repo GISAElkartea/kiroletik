@@ -8,9 +8,9 @@
   {% if news.sport %}
   <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
   {% if news.sport.image %}
-  <img class="sport_icon" src="{{ news.sport.image.url }}" />
+  <a href="{{ news.sport.get_absolute_url }}"><img class="sport_icon" src="{{ news.sport.image.url }}" /></a>
   {% endif %}
-  <h3 class="news_sport">{{ news.sport }}</h3>
+  <h3 class="news_sport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
