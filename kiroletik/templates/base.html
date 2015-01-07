@@ -59,7 +59,6 @@
       <aside>
         {% block aside %}
         {% if sport %}
-        <h2 class="championship_title">{% trans 'Matches' %}</h2>
         <ul class="championships">
           {% for championship in sport.championship_set.select_related %}
           <li>
