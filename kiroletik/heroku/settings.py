@@ -4,7 +4,6 @@ import urlparse
 from django.utils.crypto import get_random_string
 
 import dj_database_url
-from boto.s3.connection import OrdinaryCallingFormat
 
 from kiroletik.settings import * #noqa
 
@@ -20,16 +19,9 @@ DATABASES['default'] = dj_database_url.config()
 
 INSTALLED_APPS += ['storages']
 
-AWS_S3_HOST = 's3.us.archive.org'
-AWS_S3_USE_SSL = False
 AWS_STORAGE_BUCKET_NAME = 'kiroletik'
-AWS_AUTO_CREATE_BUCKET = True
-AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
-AWS_S3_SECURE_URLS = True
-AWS_S3_URL_PROTOCOL = ''
-AWS_S3_CUSTOM_DOMAIN = 'ia802600.us.archive.org/8/items/kiroletik'
-
-DEFAULT_FILE_STORAGE = 'herokuify.storage.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
+STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 
 
