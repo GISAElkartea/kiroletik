@@ -10,5 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         filepath = os.path.join(settings.BASE_DIR, 'kiroletik/heroku/cors.xml')
-        with open(filepath) as cors:
-            default_storage.save('cors', cors)
+        with open(filepath) as c:
+            cors = c.read()
+        key = default_storage.bucket.new_key('cors')
+        key.set_contents_from_string(cors)
