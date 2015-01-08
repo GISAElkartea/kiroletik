@@ -6,9 +6,8 @@
 {% block content %}
 <div class="matches">
   <section class="results">
+    <h1>{{ season }}</h1>
     {% for match in season.match_set.select_related %}
-    <h2>{{ season }}</h2>
-    <h1>{{ match }}</h1>
     <ul class="match_result {% if match.is_antagonistic %}antagonistic{% endif %}">
       {% for team_result in match.teamresult_set.select_related %}
       <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
