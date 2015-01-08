@@ -10,3 +10,4 @@ boto==2.34.0
 -e git+https://github.com/nigma/django-herokuify.git@8677853665a59a460b9c65dac6ffe5573e6cb7e1#egg=herokuify
 pylibmc==1.4.1
 rollbar==0.9.6
+newrelic==2.40.0.34
