@@ -1,11 +1,48 @@
-section.matches
-    h1
-        margin-top: 0
+ul.match_result
+    padding: 0
+    margin: 0 2em 1em 0
+    li
+        list-style: none
+        margin-bottom: .5em
+        background: #f1f1f1
+        display: block
+        width: 15em
+        position: relative
+        height: 1.5em
+        box-sizing: border-box
+        color: #222222
+        span
+            position: absolute
+            right: 0
+            display: inline-block
+    &.antagonistic
+        li
+            display: inline-block
+            padding: 0 1em
+            width: inherit
+        li:first-child
+            text-align: right
+            padding-right: 2.5em
+        li:nth-child(2)
+            padding-left: 2.5em
+            span.match_points
+                left: 0
+    @media screen and (max-width: 40em)
+        float: none
+.match_points
+    color: white
+    background: #222222
+    width: 1.5em
+    height: 1.5em
+    text-align: center
+
+div.matches
+    h1, h2
+        margin: 0 auto
+        display: block
         text-align: center
     h2
         color: $orange
-        text-align: center
-        margin-bottom: 2em
     div.pagination
         width: 50%
         margin: 1rem auto
@@ -22,12 +59,27 @@ section.matches
         a.next
             position: absolute
             left: 0
-    table
-        width: 50%
-        margin: 0 auto
-        th.match_team
-            background: #f1f1f1
-        th:nth-child(1), th:nth-child(3)
-            width: 25%
-        th:nth-child(2)
-            width: 50%
+    section.results
+        min-width: 49%
+        display: inline-block
+        vertical-align: top
+        margin-bottom: 4rem
+        h1
+            margin-bottom: 2rem
+        ul.match_result
+            margin: 0 auto
+            +fit-content
+    section.classification
+        min-width: 49%
+        display: inline-block
+        vertical-align: top
+        h1
+            margin-bottom: 3rem
+        table
+            margin: 0 auto
+            th.match_team
+                background: #f1f1f1
+            th:nth-child(1), th:nth-child(3)
+                width: 25%
+            th:nth-child(2)
+                width: 50%

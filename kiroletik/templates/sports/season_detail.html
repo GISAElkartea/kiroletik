@@ -4,28 +4,41 @@
 {% block title %}{{ season }}{% endblock title %}
 
 {% block content %}
-<section class="matches">
-  <h1>{{ season.championship }}</h1>
-  <h2>{{ season }}</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>{% trans 'Position' %}</th>
-        <th>{% trans 'Team' %}</th>
-        <th>{% trans 'Points' %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for team_classification in season.teamclassification_set.select_related %}
-      <tr>
-        <th class="match_points">{{ forloop.counter }}</th>
-        <th class="match_team">{{ team_classification.team }}</th>
-        <th class="match_points">{{ team_classification.points }}</th>
-      </tr>
+<div class="matches">
+  <section class="results">
+    {% for match in season.match_set.select_related %}
+    <h2>{{ season }}</h2>
+    <h1>{{ match }}</h1>
+    <ul class="match_result {% if match.is_antagonistic %}antagonistic{% endif %}">
+      {% for team_result in match.teamresult_set.select_related %}
+      <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
       {% endfor %}
-    </tbody>
-  </table>
+    </ul>
+    {% endfor %}
+  </section>
+
+  <section class="classification">
+    <h1>{{ season.championship }}</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>{% trans 'Position' %}</th>
+          <th>{% trans 'Team' %}</th>
+          <th>{% trans 'Points' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team_classification in season.teamclassification_set.select_related %}
+        <tr>
+          <th class="match_points">{{ forloop.counter }}</th>
+          <th class="match_team">{{ team_classification.team }}</th>
+          <th class="match_points">{{ team_classification.points }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
 
   <div class="pagination">
     <span class="step-links">
@@ -37,11 +50,6 @@
       {% endif %}
     </span>
   </div>
-
-</section>
-
-{% for match in season.match_set.select_related %}
-{{ match }}
-{% endfor %}
+</div>
 
 {% endblock content %}
