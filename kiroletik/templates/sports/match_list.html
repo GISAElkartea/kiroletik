@@ -5,7 +5,51 @@
 
 {% block content %}
 {% for match in matches %}
-{{ match }}
+<div class="matches">
+  <section class="results">
+    <h2>{{ season }}</h2>
+    <h1>{{ match }}</h1>
+    <ul class="match_result {% if match.is_antagonistic %}antagonistic{% endif %}">
+      {% for team_result in match.teamresult_set.select_related %}
+      <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="classification">
+    <h1>{{ season.championship }}</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>{% trans 'Position' %}</th>
+          <th>{% trans 'Team' %}</th>
+          <th>{% trans 'Points' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team_classification in season.teamclassification_set.select_related %}
+        <tr>
+          <th class="match_points">{{ forloop.counter }}</th>
+          <th class="match_team">{{ team_classification.team }}</th>
+          <th class="match_points">{{ team_classification.points }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div class="pagination">
+    <span class="step-links">
+      {% if season.previous %}
+      <a class="previous" href="{{ season.previous.get_absolute_url }}">{{ season.previous }}&gt</a>
+      {% endif %}
+      {% if season.next %}
+      <a class="next" href="{{ season.next.get_absolute_url }}">&lt{{ season.next }}</a>
+      {% endif %}
+    </span>
+  </div>
+</div>
 {% endfor %}
 
 {% include 'pagination.html' with page_obj=page_obj only %}
