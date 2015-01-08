@@ -23,15 +23,42 @@ ul.championships
     padding: 0
     li
         list-style: none
+        margin-bottom: 2em
         a
-            color: $orange
+            color: #b5b5b5
             text-decoration: none
             margin-bottom: 1em
-            font-weight: normal
+            font-variant: small-caps
+            text-transform: uppercase
+            padding: .3em
+            background: #222222
+            width: 100%
+            display: block
+            box-sizing: border-box
+            margin: 0
         ul
-            margin: 1em 0
+            padding: 0
             li
-                list-style: circle
-                color: adjust-color(white, $lightness:-20)
+                list-style: none
+                color: #222
+                background: #b5b5b5
+                border-left: 1em solid #222
+                padding: .1em
+                margin: .3em 0
+                box-sizing: border-box
                 a
-                    color: adjust-color(white, $lightness:-20)
+                    color: #222
+                    font-size: .9rem
+                    vertical-align: middle
+                    font-weight: normal
+                    font-variant: initial
+                    text-transform: none
+                    background: none
+            li:hover
+                border-color: #444
+    li:hover
+        a
+            background: #444
+        li
+            a
+                background: none
