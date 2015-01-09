@@ -15,11 +15,16 @@
 {# The first news will always be the highlighted one #}
 <article class="news">
   {% if news.sport %}
-  <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
-  {% if news.sport.image %}
-  <a href="{{ news.sport.get_absolute_url }}"><img class="sport_icon" src="{{ news.sport.image.url }}" /></a>
-  {% endif %}
-  <h3 class="news_sport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
+  <div class="newsDetails">
+    <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
+    {% if news.sport.image %}
+    <a href="{{ news.sport.get_absolute_url }}"><img class="sport_icon" src="{{ news.sport.image.url }}" /></a>
+    {% endif %}
+    <h3 class="news_sport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
+    {% endif %}
+  </div>
+  {% if news.image %}
+  <img id="mainImage" src="{{ news.image.url }}"/>
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
