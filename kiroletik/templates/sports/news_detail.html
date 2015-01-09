@@ -6,17 +6,17 @@
 {% block content %}
 <article class="news detail">
   {% if news.sport %}
-  <p class="news_date">{{ news.published|date:"Y-m-d" }}</p>
+  <p class="newsDate">{{ news.published|date:"Y-m-d" }}</p>
   {% if news.sport.image %}
-  <a href="{{ news.sport.get_absolute_url }}"><img class="sport_icon" src="{{ news.sport.image.url }}" /></a>
+  <a href="{{ news.sport.get_absolute_url }}"><img class="newsSportIcon" src="{{ news.sport.image.url }}" /></a>
   {% endif %}
-  <h3 class="news_sport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
+  <h3 class="newsSport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
   {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
-  <ul class="match_result {% if news.match.is_antagonistic %}antagonistic{% endif %}">
+  <ul class="matchResult {% if news.match.is_antagonistic %}antagonistic{% endif %}">
     {% for team_result in news.match.teamresult_set.select_related %}
-    <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
+    <li>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
     {% endfor %}
   </ul>
   {% endif %}

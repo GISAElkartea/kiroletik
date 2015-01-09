@@ -8,9 +8,9 @@
   <section class="results">
     <h1>{{ season }}</h1>
     {% for match in season.match_set.select_related %}
-    <ul class="match_result {% if match.is_antagonistic %}antagonistic{% endif %}">
+    <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
       {% for team_result in match.teamresult_set.select_related %}
-      <li>{{ team_result.team }} <span class="match_points">{{ team_result.points }}</span></li>
+      <li>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
       {% endfor %}
     </ul>
     {% endfor %}
@@ -30,9 +30,9 @@
       <tbody>
         {% for team_classification in season.teamclassification_set.select_related %}
         <tr>
-          <th class="match_points">{{ forloop.counter }}</th>
-          <th class="match_team">{{ team_classification.team }}</th>
-          <th class="match_points">{{ team_classification.points }}</th>
+          <th class="matchPoints">{{ forloop.counter }}</th>
+          <th class="matchTeam">{{ team_classification.team }}</th>
+          <th class="matchPoints">{{ team_classification.points }}</th>
         </tr>
         {% endfor %}
       </tbody>
