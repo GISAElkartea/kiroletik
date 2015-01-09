@@ -14,6 +14,6 @@ $(function() {
     split_list($('ul#mainNav'));
     $('#others > a').click(function(event)  {
         event.preventDefault();
-        $('#subNav').toggle();
+        $('#subNav').toggleClass('active');
     });
 });
