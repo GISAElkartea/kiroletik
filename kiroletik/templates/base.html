@@ -64,7 +64,7 @@
           <li>
             <a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
             <ul>
-              {% for season in championship.season_set.select_related %}
+              {% for season in championship.season_set.select_related|slice:":10" %}
               <li><a href="{{ season.get_absolute_url }}">{{ season }}</a></li>
               {% endfor %}
             </ul>
