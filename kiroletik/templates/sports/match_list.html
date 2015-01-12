@@ -10,7 +10,7 @@
     <h1>{{ season }}</h1>
     <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
       {% for team_result in match.teamresult_set.select_related %}
-      <li>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
+      <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
       {% endfor %}
     </ul>
   </section>
@@ -30,7 +30,7 @@
         {% for team_classification in season.teamclassification_set.select_related %}
         <tr>
           <th class="matchPoints">{{ forloop.counter }}</th>
-          <th class="matchTeam">{{ team_classification.team }}</th>
+          <th class="matchTeam {% if team_classification.team.town %}local{% endif %}">{{ team_classification.team }}</th>
           <th class="matchPoints">{{ team_classification.points }}</th>
         </tr>
         {% endfor %}

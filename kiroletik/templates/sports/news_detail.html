@@ -16,7 +16,7 @@
   {% if news.match %}
   <ul class="matchResult {% if news.match.is_antagonistic %}antagonistic{% endif %}">
     {% for team_result in news.match.teamresult_set.select_related %}
-    <li>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
+    <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
     {% endfor %}
   </ul>
   {% endif %}
