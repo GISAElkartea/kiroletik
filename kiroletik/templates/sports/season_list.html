@@ -5,18 +5,14 @@
 
 {% block content %}
 {% for season in seasons %}
-<div class="seasons">
-  <section class="results">
-    <h1>{{ season }}</h1>
-    {% for match in season.match_set.select_related %}
-    <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
-      {% for team_result in match.teamresult_set.select_related %}
-      <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
-      {% endfor %}
-    </ul>
-    {% endfor %}
+<div class="matches seasons">
+  <section class="championshipSport">
+    {% if season.championship.sport.image %}
+    <a href="{{ season.championshio.sport.get_absolute_url }}"><img
+        class="newsSportIcon" src="{{ season.championship.sport.image.url }}" /></a>
+    {% endif %}
+    <h3 class="newsSport"><a href="{{ season.championship.sport.get_absolute_url }}">{{ season.championship.sport }}</a></h3>
   </section>
-
   <section class="classification">
     <h1>{{ season.championship }}</h1>
 
@@ -40,16 +36,16 @@
     </table>
   </section>
 
-  <div class="pagination">
-    <span class="step-links">
-      {% if season.previous %}
-      <a class="previous" href="{{ season.previous.get_absolute_url }}">{{ season.previous }}&gt</a>
-      {% endif %}
-      {% if season.next %}
-      <a class="next" href="{{ season.next.get_absolute_url }}">&lt{{ season.next }}</a>
-      {% endif %}
-    </span>
-  </div>
+  <section class="results">
+    <h2>{{ season }}</h2>
+    {% for match in season.match_set.select_related %}
+    <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
+      {% for team_result in match.teamresult_set.select_related %}
+      <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
 </div>
 {% endfor %}
 

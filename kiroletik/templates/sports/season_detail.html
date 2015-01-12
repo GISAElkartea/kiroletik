@@ -5,17 +5,6 @@
 
 {% block content %}
 <div class="matches">
-  <section class="results">
-    <h1>{{ season }}</h1>
-    {% for match in season.match_set.select_related %}
-    <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
-      {% for team_result in match.teamresult_set.select_related %}
-      <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
-      {% endfor %}
-    </ul>
-    {% endfor %}
-  </section>
-
   <section class="classification">
     <h1>{{ season.championship }}</h1>
 
@@ -37,6 +26,17 @@
         {% endfor %}
       </tbody>
     </table>
+  </section>
+
+  <section class="results">
+    <h2>{{ season }}</h2>
+    {% for match in season.match_set.select_related %}
+    <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
+      {% for team_result in match.teamresult_set.select_related %}
+      <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
   </section>
 
   <div class="pagination">
