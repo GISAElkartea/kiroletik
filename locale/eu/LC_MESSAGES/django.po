@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiroletik 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 10:49+0000\n"
+"POT-Creation-Date: 2015-01-12 21:48+0000\n"
 "PO-Revision-Date: 2014-12-30 12:04+1\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: Basque\n"
@@ -76,12 +76,12 @@ msgstr "Ez da orria aurkitu"
 msgid "Sorry, the page you requested could not be found."
 msgstr "Barkaiguzu, eskatu duzun orria ezin izan da topatu."
 
-#: kiroletik/templates/base.html:29
+#: kiroletik/templates/base.html:33
 msgid "Others"
 msgstr "Besteak"
 
-#: kiroletik/templates/base.html:36
-msgid "Matches"
+#: kiroletik/templates/base.html:40
+msgid "Results"
 msgstr "Emaitzak"
 
 #: kiroletik/templates/pagination.html:6
@@ -103,25 +103,28 @@ msgstr ""
 msgid "Next"
 msgstr "Hurrengoa"
 
-#: kiroletik/templates/sports/match_list.html:4
-msgid "Latest Match Results"
-msgstr "Azkeneko Emaitzak"
-
 #: kiroletik/templates/sports/news_list.html:4
 msgid "Latest News"
 msgstr "Azkeneko Berriak"
 
-#: kiroletik/templates/sports/season_detail.html:24
+#: kiroletik/templates/sports/season_detail.html:14
+#: kiroletik/templates/sports/season_list.html:22
 msgid "Position"
 msgstr "Kokapena"
 
-#: kiroletik/templates/sports/season_detail.html:25 sports/models.py:110
+#: kiroletik/templates/sports/season_detail.html:15
+#: kiroletik/templates/sports/season_list.html:23 sports/models.py:110
 msgid "Team"
 msgstr "Taldea"
 
-#: kiroletik/templates/sports/season_detail.html:26
+#: kiroletik/templates/sports/season_detail.html:16
+#: kiroletik/templates/sports/season_list.html:24
 msgid "Points"
 msgstr "Puntuak"
+
+#: kiroletik/templates/sports/season_list.html:4
+msgid "Latest Match Results"
+msgstr "Azkeneko Emaitzak"
 
 #: sports/admin.py:19
 msgid "Put on menu"
@@ -250,3 +253,6 @@ msgstr "Tresnatxoak"
 #: widgets/models.py:25
 msgid "position"
 msgstr "kokapena"
+
+#~ msgid "Matches"
+#~ msgstr "Emaitzak"
