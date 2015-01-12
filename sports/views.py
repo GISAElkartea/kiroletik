@@ -46,12 +46,12 @@ class NewsDetail(NewsMixin, SportMixin, DateDetailView):
         return self.object.sport
 
 
-class MatchList(ListView):
-    model = Match
+class SeasonList(ListView):
+    model = Season
     allow_empty = True
     paginate_by = 10
-    context_object_name = 'matches'
-    template_name = 'sports/match_list.html'
+    context_object_name = 'seasons'
+    template_name = 'sports/season_list.html'
 
 
 class SeasonDetail(SportMixin, YearMixin, MonthMixin, DayMixin, DetailView):
@@ -73,5 +73,5 @@ class SeasonDetail(SportMixin, YearMixin, MonthMixin, DayMixin, DetailView):
 news_list = NewsList.as_view()
 sport_news_list = SportNewsList.as_view()
 news_detail = NewsDetail.as_view()
-match_list = MatchList.as_view()
+season_list = SeasonList.as_view()
 season_detail = SeasonDetail.as_view()

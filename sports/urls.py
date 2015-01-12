@@ -22,9 +22,9 @@ urlpatterns = patterns(
         'news_detail',
         name='news-detail'),
 
-    url(r'^matches/$',
-        'match_list',
-        name='match-list'),
+    url(r'^seasons/$',
+        'season_list',
+        name='season-list'),
 
     url(r'^{}/season/{}/{}/{}/$'.format(slug, year, month, day),
         'season_detail',

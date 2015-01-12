@@ -7,7 +7,7 @@ from django.utils.timezone import now
 
 from model_mommy import mommy
 
-from .models import News, Sport, Match, Season, Championship
+from .models import News, Sport, Season, Championship
 
 
 class SportTestCase(TestCase):
@@ -147,34 +147,34 @@ class NewsDetailTestCase(TestCase):
         self.assertEqual(ctx['sport'], self.past_news.sport)
 
 
-class MatchListTestCase(TestCase):
+class SeasonListTestCase(TestCase):
     def setUp(self):
-        self.matches = mommy.make(Match, _quantity=20)
-        self.url = reverse('match-list')
+        self.seasons = mommy.make(Season, _quantity=20)
+        self.url = reverse('season-list')
 
     def test_ok(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
 
     def test_empty(self):
-        for match in self.matches:
-            match.delete()
+        for season in self.seasons:
+            season.delete()
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
 
     def test_context(self):
         response = self.client.get(self.url)
-        self.assertIn('matches', response.context)
+        self.assertIn('seasons', response.context)
 
     def test_order(self):
-        matches = list(Match.objects.order_by('-date')[:10])
+        seasons = list(Season.objects.order_by('-date')[:10])
         ctx = self.client.get(self.url).context
-        self.assertEqual(list(ctx['matches']), matches)
+        self.assertEqual(list(ctx['seasons']), seasons)
 
     def test_paginated(self):
         ctx = self.client.get(self.url).context
         self.assertTrue(ctx['is_paginated'])
-        self.assertEqual(len(ctx['matches']), 10)
+        self.assertEqual(len(ctx['seasons']), 10)
 
     def test_pagination(self):
         page = self.client.get(self.url).context['page_obj']
