@@ -13,7 +13,7 @@
 
 {% for news in news_list %}
 {# The first news will always be the highlighted one #}
-<article class="news">
+<article class="news list">
   {% if news.sport %}
   {% if news.image %}
   <div id="mainImage" style="background: url('{{ news.image.url }}'); background-size: cover; background-position: center center">

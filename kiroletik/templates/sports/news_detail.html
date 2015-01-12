@@ -23,5 +23,6 @@
   {% if news.image %}
   <img src="{{ news.image.url }}"/>
   {% endif %}
+  {{ news.content | safe }}
 </article>
 {% endblock content %}
