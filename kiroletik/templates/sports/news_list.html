@@ -15,6 +15,10 @@
 {# The first news will always be the highlighted one #}
 <article class="news">
   {% if news.sport %}
+  {% if news.image %}
+  <div id="mainImage" style="background: url('{{ news.image.url }}'); background-size: cover; background-position: center center">
+  </div>
+  {% endif %}
   <div class="newsDetails">
     <p class="newsDate">{{ news.published|date:"Y-m-d" }}</p>
     {% if news.sport.image %}
@@ -23,9 +27,6 @@
     <h3 class="newsSport"><a href="{{ news.sport.get_absolute_url }}">{{ news.sport }}</a></h3>
     {% endif %}
   </div>
-  {% if news.image %}
-  <img id="mainImage" src="{{ news.image.url }}"/>
-  {% endif %}
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
   {% if news.match %}
   <ul class="matchResult {% if news.match.is_antagonistic %}antagonistic{% endif %}">

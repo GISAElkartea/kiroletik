@@ -13,7 +13,7 @@ article.news
     margin-bottom: 5rem
     clear: both
     overflow: hidden
-    img#mainImage
+    div#mainImage
         display: none
     p.newsDate, img.newsSportIcon, h3.newsSport
         display: inline-block
@@ -53,16 +53,17 @@ article.news.detail
         max-width: 100%
 
 article.news:first-child
-    img#mainImage
+    div#mainImage
         display: block
         width: 100%
-        max-width: 100%
-        margin: 0 0 1rem 0
+        height: 25rem
     h1, div.newsDetails
         background: #222222
-        padding: .5em
+        padding: .5em .5em 0 .5em
     h1
         font-size: 2rem
+        margin: 0 0 1em 0
+        padding: .2em .5em .5em .5em
         a
             color: #f1f1f1
     p.newsDate
