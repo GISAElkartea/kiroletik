@@ -73,10 +73,10 @@ class NewsListTestCase(TestCase):
 
     def test_order(self):
         alpha = mommy.make(News)
-        beta = mommy.make(News)
+        beta = mommy.make(News, highlighted=True)
         gamma = mommy.make(News)
         ctx = self.client.get(self.url).context
-        self.assertEqual(ctx['news_list'][:3], [gamma, beta, alpha])
+        self.assertEqual(ctx['news_list'][:3], [beta, gamma, alpha])
 
     def test_paginated(self):
         ctx = self.client.get(self.url).context
