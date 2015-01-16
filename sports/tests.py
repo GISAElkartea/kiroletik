@@ -81,13 +81,13 @@ class NewsListTestCase(TestCase):
     def test_paginated(self):
         ctx = self.client.get(self.url).context
         self.assertTrue(ctx['is_paginated'])
-        self.assertEqual(len(ctx['news_list']), 10)
+        self.assertEqual(len(ctx['news_list']), 5)
 
     def test_pagination(self):
         page = self.client.get(self.url).context['page_obj']
         self.assertFalse(page.has_previous())
         self.assertEqual(page.number, 1)
-        self.assertEqual(page.paginator.num_pages, 2)
+        self.assertEqual(page.paginator.num_pages, 4)
         self.assertTrue(page.has_next())
         self.assertEqual(page.next_page_number(), 2)
 
