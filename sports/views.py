@@ -4,7 +4,7 @@ from django.views.generic.dates import ArchiveIndexView, DateDetailView
 from django.views.generic.dates import YearMixin, MonthMixin, DayMixin
 from django.shortcuts import get_object_or_404
 
-from .models import News, Sport, Match, Season
+from .models import News, Sport, Season
 
 
 class NewsMixin(object):
@@ -13,6 +13,11 @@ class NewsMixin(object):
     date_field = 'published'
     allow_future = False
     month_format = '%m'
+
+    def get_dated_queryset(self, *args, **kwargs):
+        qs = super(NewsMixin, self).get_dated_queryset(*args, **kwargs)
+        ordering = qs.model()._meta.ordering
+        return qs.order_by(*ordering)
 
 
 class SportMixin(object):

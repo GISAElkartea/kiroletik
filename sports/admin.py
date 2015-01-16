@@ -70,8 +70,10 @@ admin.site.register(Match, MatchAdmin)
 
 
 class NewsAdmin(admin.ModelAdmin):
-    fields = ('title', 'published', ('sport', 'match'), 'content', 'image')
-    list_display = ('__str__', 'sport', 'published', 'is_published')
+    fields = ('title', ('highlighted', 'published'), ('sport', 'match'),
+              'content', 'image')
+    list_display = ('__str__', 'sport', 'published', 'is_published',
+                    'highlighted')
     list_filter = ('sport', 'published',)
     search_fields = ('title', 'content')
     date_hierarchy = 'published'
