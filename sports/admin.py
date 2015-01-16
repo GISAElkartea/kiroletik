@@ -70,7 +70,7 @@ admin.site.register(Match, MatchAdmin)
 
 
 class NewsAdmin(admin.ModelAdmin):
-    fields = ('title', ('highlighted', 'published'), ('sport', 'match'),
+    fields = ('title', ('published', 'highlighted'), ('sport', 'match'),
               'content', 'image')
     list_display = ('__str__', 'sport', 'published', 'is_published',
                     'highlighted')
