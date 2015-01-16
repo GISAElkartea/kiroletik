@@ -10,6 +10,7 @@ urlpatterns = patterns(
     url(r'^flatpages/', include('flatpages.urls')),
 
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
 )

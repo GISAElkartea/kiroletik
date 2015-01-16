@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .models import (Sport, Town, Championship, Season, Team,
                      TeamClassification, Match, TeamResult, News)
+from .forms import TeamClassificationForm, TeamResultForm
 
 
 admin.site.register(Town)
@@ -32,6 +33,7 @@ admin.site.register(Championship, ChampionshipAdmin)
 
 class TeamClassificationInline(admin.TabularInline):
     model = TeamClassification
+    form = TeamClassificationForm
     fields = ('team', 'points')
     extra = 1
 
@@ -56,6 +58,7 @@ admin.site.register(Team, TeamAdmin)
 
 class TeamResultInline(admin.TabularInline):
     model = TeamResult
+    form = TeamResultForm
     fields = ('team', 'points')
     extra = 1
 
