@@ -36,7 +36,7 @@
   </ul>
   {% endif %}
   {% if news.image %}
-  <img class="sportImage {% if not news.match.is_antagonistic %}not_antagonistic{% endif %}" src="{{ news.image.url }}"/>
+  <img class="sportImage {% if news.match and not news.match.is_antagonistic %}not_antagonistic{% endif %}" src="{{ news.image.url }}"/>
   {% endif %}
   {{ news.content | truncatewords_html:150 | safe }}
 </article>
