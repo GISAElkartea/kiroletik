@@ -34,7 +34,7 @@
           <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
           {% endfor %}
           <li id="others">
-            <a href="">{% trans 'Others' %}<span class="arrow"></span></a>
+              <a href="">{% trans 'Others' %}<span><span class="arrow"></span></span></a>
             <ul id="subNav">
               {% for sport in sports.not_on_menu %}
               <li><a href="{{ sport.get_absolute_url }}">{{ sport }}</a></li>
