@@ -62,9 +62,9 @@
         <ul class="championships">
           {% for championship in sport.championship_set.select_related %}
           <li>
-              <a {% if championship.season_set.exists %}href="{{ championship.get_absolute_url }}"{% endif %}>{{ championship }}</a>
+            <a href="{{ championship.get_absolute_url }}">{{ championship }}</a>
             <ul>
-              {% for season in championship.season_set.select_related|slice:":10" %}
+              {% for season in championship.season_set.select_related %}
               <li><a href="{{ season.get_absolute_url }}">{{ season }}</a></li>
               {% endfor %}
             </ul>
@@ -89,7 +89,7 @@
               property="dct:title">Kiroletik</span> lana, <a
               xmlns:cc="http://creativecommons.org/ns#"
               href="http://kiroletik.eus" property="cc:attributionName"
-              rel="cc:attributionURL">Unai Oiartzun</a> egilearena, <a
+              rel="cc:attributionURL">Pausumedia</a> egilearena, <a
               rel="license"
               href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
               Commons Aitortu-PartekatuBerdin 4.0 Nazioartekoa baimen baten
