@@ -14,13 +14,13 @@
 {% for news in news_list %}
 {# The first news will always be the highlighted one #}
 <article class="news list">
-  {% if news.sport %}
   {% if news.image %}
   <div id="mainImage" style="background: url('{{ news.image.url }}'); background-size: cover; background-position: center center">
   </div>
   {% endif %}
   <div class="newsDetails">
     <p class="newsDate">{{ news.published|date:"Y-m-d" }}</p>
+    {% if news.sport %}
     {% if news.sport.image %}
     <a href="{{ news.sport.get_absolute_url }}"><img class="newsSportIcon" src="{{ news.sport.image.url }}" /></a>
     {% endif %}
@@ -35,8 +35,8 @@
     {% endfor %}
   </ul>
   {% endif %}
-  {% if news.image and news.match.is_antagonistic %}
-  <img src="{{ news.image.url }}"/>
+  {% if news.image %}
+  <img class="sportImage {% if news.match.is_antagonistic %}antagonisticImage{% endif %}" src="{{ news.image.url }}"/>
   {% endif %}
   {{ news.content | truncatewords_html:150 | safe }}
 </article>

@@ -24,14 +24,20 @@ article.news
             text-decoration: none
     h2
         font-size: 1.1rem
-    img
-        max-width: 40%
+    img.sportImage
+        max-width: 65%
         float: left
-        margin: .5em 1.5em 1.5em 0
+        margin: 0 0 4% 0
+        &.antagonisticImage
+            max-width: 40%
+            margin-right: 2em
     ul.matchResult
         float: left
+        width: 30%
+        margin: 0 5% 3% 0
         &.antagonistic
             float: none
+            width: inherit
     p
         line-height: 1.5em
         text-align: justify
@@ -71,6 +77,8 @@ article.list:first-child
         padding: .2em .5em .5em .5em
         a
             color: #f1f1f1
+    img.sportImage
+        display: none
     p.newsDate
         color: #f1f1f1
         padding-left: .5em
