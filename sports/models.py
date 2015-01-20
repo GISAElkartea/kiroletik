@@ -152,6 +152,8 @@ class Match(models.Model):
         verbose_name = _('Match')
         verbose_name_plural = _('Match')
 
+    name = models.CharField(max_length=150, blank=True,
+                            verbose_name=_('name'))
     date = models.DateField(verbose_name=_('date'))
     season = models.ForeignKey(Season, blank=True, null=True,
                                verbose_name=_('season'))

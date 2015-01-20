@@ -70,9 +70,10 @@ class TeamResultInline(GrappelliSortableHiddenMixin, admin.TabularInline):
 
 class MatchAdmin(admin.ModelAdmin):
     inlines = [TeamResultInline]
-    fields = ('date', 'season')
-    list_display = ('date', 'season')
+    fields = ('date', 'name', 'season')
+    list_display = ('date', 'name', 'season')
     list_filter = ('season', 'date')
+    search_fields = ('name',)
     date_hierarchy = 'date'
 admin.site.register(Match, MatchAdmin)
 
