@@ -4,5 +4,7 @@
 {% block title %}{% trans 'Page not found' %}{% endblock title %}
 
 {% block content %}
-<p>{% trans 'Sorry, the page you requested could not be found.' %}</p>
+<div id="error404">
+    <a href="/"><img src="../images/404.png" alt="404 error"/></a>
+</div>
 {% endblock content %}
