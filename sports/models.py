@@ -7,6 +7,7 @@ from django.utils.translation import ugettext as _
 
 from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
+from positions.fields import PositionField
 
 
 class SportQuerySet(models.QuerySet):
@@ -131,7 +132,7 @@ class Team(models.Model):
 
 class TeamClassification(models.Model):
     class Meta:
-        ordering = ['-points']
+        ordering = ['position', '-points']
         unique_together = ('team', 'season')
         verbose_name = _('Team classification')
         verbose_name_plural = _('Team classifications')
@@ -139,6 +140,7 @@ class TeamClassification(models.Model):
     team = models.ForeignKey(Team, verbose_name=_('team'))
     season = models.ForeignKey(Season, verbose_name=_('season'))
     points = models.PositiveIntegerField(verbose_name=_('points'))
+    position = PositionField(default=-1, verbose_name=_('position'))
 
     def __unicode__(self):
         return '{s.team} {s.points} points at {s.season}'.format(s=self)
@@ -163,7 +165,7 @@ class Match(models.Model):
 
 class TeamResult(models.Model):
     class Meta:
-        ordering = ['-points']
+        ordering = ['position', '-points']
         unique_together = ('team', 'match')
         verbose_name = _('Team result')
         verbose_name_plural = _('Team results')
@@ -171,6 +173,7 @@ class TeamResult(models.Model):
     team = models.ForeignKey(Team, verbose_name=_('team'))
     points = models.PositiveIntegerField(verbose_name=_('points'))
     match = models.ForeignKey(Match, verbose_name=_('match'))
+    position = PositionField(default=-1, verbose_name=_('position'))
 
     def __unicode__(self):
         return '{s.team} {s.points} points at {s.match}'.format(s=self)

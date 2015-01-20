@@ -12,7 +12,7 @@ class TeamClassificationForm(ModelForm):
 
     class Meta:
         model = TeamClassification
-        fields = ('team', 'season', 'points')
+        fields = ('position', 'team', 'season', 'points')
 
 
 class TeamResultForm(ModelForm):
@@ -22,4 +22,4 @@ class TeamResultForm(ModelForm):
 
     class Meta:
         model = TeamResult
-        fields = ('team', 'match', 'points')
+        fields = ('position', 'team', 'match', 'points')

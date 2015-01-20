@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
+from grappelli.forms import GrappelliSortableHiddenMixin
+
 from .models import (Sport, Town, Championship, Season, Team,
                      TeamClassification, Match, TeamResult, News)
 from .forms import TeamClassificationForm, TeamResultForm
@@ -31,10 +33,12 @@ class ChampionshipAdmin(admin.ModelAdmin):
 admin.site.register(Championship, ChampionshipAdmin)
 
 
-class TeamClassificationInline(admin.TabularInline):
+class TeamClassificationInline(GrappelliSortableHiddenMixin,
+                               admin.TabularInline):
     model = TeamClassification
     form = TeamClassificationForm
-    fields = ('team', 'points')
+    fields = ('position', 'team', 'points')
+    sortable_field_name = 'position'
     extra = 1
 
 
@@ -56,10 +60,11 @@ class TeamAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 
 
-class TeamResultInline(admin.TabularInline):
+class TeamResultInline(GrappelliSortableHiddenMixin, admin.TabularInline):
     model = TeamResult
     form = TeamResultForm
-    fields = ('team', 'points')
+    fields = ('position', 'team', 'points')
+    sortable_field_name = 'position'
     extra = 1
 
 
