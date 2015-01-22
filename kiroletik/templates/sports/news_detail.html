@@ -20,11 +20,11 @@
     <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
     {% endfor %}
   </ul>
+  {% if news.image %}
+  <img class="sportImage {% if not match.is_antagonistic %}not_antagonistic{% endif %}" src="{{ news.image.url }}"/>
+  {% endif %}
   {% endfor %}
 
-  {% if news.image %}
-  <img src="{{ news.image.url }}"/>
-  {% endif %}
   {{ news.content | safe }}
 </article>
 {% endblock content %}
