@@ -162,7 +162,7 @@ class Match(models.Model):
         return self.teamresult_set.count() == 2
 
     def __unicode__(self):
-        return str(self.date)
+        return self.name or str(self.date)
 
 
 class TeamResult(models.Model):
