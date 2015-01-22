@@ -14,8 +14,8 @@
 {% for news in news_list %}
 <article class="news list{% if forloop.first and page_obj.number == 1 %} highlighted{% endif %}">
   {% if news.image %}
-  <div id="mainImage" style="background: url('{{ news.image.url }}'); background-size: cover; background-position: center center">
-  </div>
+  <a href="{{ news.get_absolute_url }}" id="mainImage" style="background: url('{{ news.image.url }}'); background-size: cover; background-position: center center">
+  </a>
   {% endif %}
   <div class="newsDetails">
     <p class="newsDate">{{ news.published|date:"Y-m-d" }}</p>
