@@ -27,13 +27,15 @@
     {% endif %}
   </div>
   <h1><a href="{{ news.get_absolute_url }}">{{ news }}</a></h1>
-  {% if news.match %}
-  <ul class="matchResult {% if news.match.is_antagonistic %}antagonistic{% endif %}">
-    {% for team_result in news.match.teamresult_set.select_related %}
+
+  {% for match in news.matches.select_related %}
+  <ul class="matchResult {% if match.is_antagonistic %}antagonistic{% endif %}">
+    {% for team_result in match.teamresult_set.select_related %}
     <li {% if team_result.team.town %}class="local"{% endif %}>{{ team_result.team }} <span class="matchPoints">{{ team_result.points }}</span></li>
     {% endfor %}
   </ul>
-  {% endif %}
+  {% endfor %}
+
   {% if news.image %}
   <img class="sportImage {% if news.match and not news.match.is_antagonistic %}not_antagonistic{% endif %}" src="{{ news.image.url }}"/>
   {% endif %}

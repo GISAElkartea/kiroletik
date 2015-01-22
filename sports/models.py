@@ -202,8 +202,8 @@ class News(models.Model):
                                       verbose_name=_('highlighted'))
     sport = models.ForeignKey(Sport, null=True, blank=True,
                               verbose_name=_('sport'))
-    match = models.ForeignKey(Match, null=True, blank=True,
-                              verbose_name=_('match'))
+    matches = models.ManyToManyField(Match, null=True, blank=True,
+                                     verbose_name=_('matches'))
 
     title = models.CharField(max_length=200, verbose_name=_('title'))
     content = RichTextField(blank=True, verbose_name=_('content'))
