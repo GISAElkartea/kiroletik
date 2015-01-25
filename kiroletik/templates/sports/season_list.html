@@ -4,7 +4,7 @@
 {% block title %}{% trans 'Latest Match Results' %}{% endblock title %}
 
 {% block content %}
-{% for season in seasons %}
+{% for season in seasons|dictsort:"championship.sport.name" %}
 <div class="matches seasons">
   <section class="championshipSport">
     {% if season.championship.sport.image %}
