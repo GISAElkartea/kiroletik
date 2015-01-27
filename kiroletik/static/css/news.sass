@@ -15,6 +15,7 @@ article.news
     overflow: hidden
     line-height: 1.5em
     text-align: justify
+    width: 100%
     div#mainImage
         display: none
     img.newsSportIcon
@@ -54,7 +55,7 @@ article.news
             display: block
         &.antagonistic
             float: none
-            width: inherit
+            width: unset
     p
         line-height: 1.5em
         text-align: justify
@@ -68,7 +69,7 @@ p.newsDate
     color: #222222
     margin-right: .7em
 img.newsSportIcon
-    width: 3%
+    width: 1.5em
     margin-right: .3em
 h3.newsSport
     margin-right: 1em
@@ -89,6 +90,8 @@ article.highlighted
         font-size: 2rem
         margin: 0 0 1em 0
         padding: .2em .5em .5em .5em
+        @media screen and (max-width: 40em)
+            font-size: 1.5rem
         a
             color: #f1f1f1
     img.sportImage
