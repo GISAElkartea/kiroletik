@@ -38,19 +38,38 @@ nav
         ul#subNav
             display: none
             position: absolute
-            top: 5rem
-            left: 0
+            top: 3rem
+            right: 0
             margin: 0
             padding: 0
-            background: adjust-color(black, $lightness:10)
-            border-top: adjust-color(white, $lightness:-60) solid .05rem
-            width: 100%
+            background: adjust-color(black, $lightness:80)
+            width: 70%
+            text-align: left
+            columns: 3
+            border-top: solid .3rem adjust-color(black, $lightness:30)
+            @media screen and (max-width: 1000px)
+                width: 120%
             li
-                padding: .3rem
-                float: left
+                padding: .7rem
                 margin: 0
+                width: 50%
+                box-sizing: border-box
                 a
                     font-size: .9em
+                    color: adjust-color(black, $lightness:10)
+            &:before
+                bottom: 100%
+                right: 1rem
+                border: solid transparent
+                content: " "
+                height: 0
+                width: 0
+                position: absolute
+                pointer-events: none
+                border-color: transparent
+                border-bottom-color: adjust-color(black, $lightness:30)
+                border-width: 1.3rem
+                margin-left: -1.3rem
         span
             width: .65em
             display: inline-block
