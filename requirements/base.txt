@@ -1,4 +1,4 @@
-Django==1.7.4
+Django==1.8
 django-autoslug==1.7.2
 django-ckeditor==4.4.7
 django-positions==0.5.2
