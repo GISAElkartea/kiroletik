@@ -9,3 +9,4 @@ django-grappelli==2.6.3
 django-autocomplete-light==2.0.5
 pytz==2014.10
 Pillow==2.6.1
+-e git+https://github.com/unaizalakain/django-acme.git@master#egg=django-acme
