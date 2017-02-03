@@ -12,3 +12,4 @@ pylibmc==1.4.1
 rollbar==0.9.6
 newrelic==2.40.0.34
 django-heroku-postgresify==0.4
+django-heroku-memcacheify==1.0.0
