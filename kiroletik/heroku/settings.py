@@ -1,5 +1,5 @@
 import os
-import urlparse
+from urllib.parse import urlparse
 
 from django.utils.crypto import get_random_string
 
@@ -74,7 +74,7 @@ CACHES = {
 # Redis #
 #########
 
-redis_url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
+redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
 
 SESSION_ENGINE = 'redis_sessions.session'
 SESSION_REDIS_HOST = redis_url.hostname
