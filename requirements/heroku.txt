@@ -6,7 +6,7 @@ python-binary-memcached==0.24.3
 django-bmemcached==0.2.2
 django-redis-sessions==0.4.0
 boto==2.34.0
--e git+https://github.com/jschneier/django-storages.git@1.1.8#egg=django-storages
+django-storages==1.5.2
 -e git+https://github.com/nigma/django-herokuify.git@8677853665a59a460b9c65dac6ffe5573e6cb7e1#egg=herokuify
 pylibmc==1.4.1
 rollbar==0.9.6
