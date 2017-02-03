@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 from django.utils.crypto import get_random_string
 
 import dj_database_url
+import herokuify
 
 from kiroletik.settings import * #noqa
 
@@ -58,16 +59,7 @@ ALLOWED_HOSTS = ['kiroletik.herokuapp.com',
 # Memcached #
 #############
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_bmemcached.memcached.BMemcached',
-        'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS').split(','),
-        'OPTIONS': {
-            'username': os.environ.get('MEMCACHEDCLOUD_USERNAME'),
-            'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD')
-        }
-    }
-}
+CACHES = herokuify.get_cache_config()
 
 
 #########
