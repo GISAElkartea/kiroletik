@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.timezone import now
@@ -33,7 +31,7 @@ class Sport(models.Model):
 
     slug = AutoSlugField(populate_from='name', unique=True, editable=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -47,7 +45,7 @@ class Town(models.Model):
 
     name = models.CharField(max_length=50, unique=True, verbose_name=_('town'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -63,7 +61,7 @@ class Championship(models.Model):
 
     slug = AutoSlugField(populate_from='name', unique=True, editable=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_latest_season(self):
@@ -86,7 +84,7 @@ class Season(models.Model):
     name = models.CharField(max_length=150, blank=True,
                             verbose_name=_('name'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name or str(self.date)
 
     def get_absolute_url(self):
@@ -122,7 +120,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to='images/teams', blank=True,
                               verbose_name=_('image'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
@@ -142,7 +140,7 @@ class TeamClassification(models.Model):
     points = models.PositiveIntegerField(verbose_name=_('points'))
     position = PositionField(default=-1, verbose_name=_('position'))
 
-    def __unicode__(self):
+    def __str__(self):
         return '{s.team} {s.points} points at {s.season}'.format(s=self)
 
 
@@ -161,7 +159,7 @@ class Match(models.Model):
     def is_antagonistic(self):
         return self.teamresult_set.count() == 2
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name or str(self.date)
 
 
@@ -177,7 +175,7 @@ class TeamResult(models.Model):
     match = models.ForeignKey(Match, verbose_name=_('match'))
     position = PositionField(default=-1, verbose_name=_('position'))
 
-    def __unicode__(self):
+    def __str__(self):
         return '{s.team} {s.points} points at {s.match}'.format(s=self)
 
 
@@ -212,7 +210,7 @@ class News(models.Model):
 
     slug = AutoSlugField(populate_from='title', unique=True, editable=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):

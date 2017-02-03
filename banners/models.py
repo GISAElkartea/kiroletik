@@ -22,7 +22,7 @@ class Banner(models.Model):
     active = models.BooleanField(default=True, verbose_name=_('active'))
     image = models.ImageField(upload_to='banners', verbose_name=_('image'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def save(self, *args, **kwargs):
